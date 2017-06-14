@@ -1,0 +1,86 @@
+$leap-link-text:$leap-color-primary !default;
+$leap-link-text--hover:$leap-color-primary-dark !default;
+$leap-link-text--active:$leap-color-primary-faded !default;
+$leap-link-text--disabled:$leap-color-primary-faded !default;
+
+$leap-link-gray-text:$leap-color-gray60 !default;
+$leap-link-gray-text--hover:$leap-color-gray100 !default;
+$leap-link-gray-text--active:$leap-color-gray40 !default;
+$leap-link-gray-text--disabled:$leap-color-gray40 !default;
+
+a {
+  text-decoration:none;
+  color:$leap-link-text;
+  transition:color 0.25s ease;
+
+  &:hover,
+  &:focus {
+    color:$leap-link-text--hover;
+    outline:none;
+
+    .leap-icon {
+      text-decoration:none;
+      color:inherit;
+    }
+  }
+
+  &:active {
+    color:$leap-link-text--active;
+  
+    .leap-icon {
+      color:inherit;
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    color:$leap-link-text--disabled;
+    cursor:default;
+  
+    .leap-icon {
+      color:inherit;
+    }
+  }
+
+  .leap-icon {
+    display:inline-block;
+    margin-left:20px;
+    font-size:inherit;
+    color:inherit;
+  }
+}
+
+.leap-link {
+  position:relative;
+  display:inline-block;
+  @include font();
+  font-weight:$leap-font-weight-bold;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  white-space:nowrap;
+  cursor:pointer;
+  transition:color 0.25s ease;
+
+  &:hover,
+  &:focus {
+    text-decoration:none;
+  }
+
+  &.gray {
+    color:$leap-link-gray-text;
+
+    &:hover,
+    &:focus {
+      color:$leap-link-gray-text--hover;
+    }
+
+    &:active {
+      color:$leap-link-gray-text--active;
+    }
+
+    &:disabled,
+    &.disabled {
+      color:$leap-link-gray-text--disabled;
+    }
+  }
+}

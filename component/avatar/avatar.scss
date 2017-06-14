@@ -1,0 +1,23 @@
+$leap-avatar-background:$leap-color-gray40 !default;
+$leap-avatar-text:$leap-color-white !default;
+
+.leap-avatar {
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  height: grid(6);
+  width: grid(6);
+  background:$leap-avatar-background;
+  border-radius: 4em;
+  cursor: default;
+  
+  p {
+    margin:0;
+    padding:0;
+    letter-spacing:0;
+    line-height:0.8em;
+    font-weight:$leap-font-weight-bold;
+    font-size:12px;
+    color:$leap-avatar-text;
+  }
+}

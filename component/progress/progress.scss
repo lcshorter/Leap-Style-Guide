@@ -1,0 +1,79 @@
+$leap-progress-foreground: $leap-color-primary !default;
+$leap-progress-background: $leap-color-gray10 !default;
+$leap-progress-background-complete: $leap-color-primary !default;
+
+@keyframes leap-keyframes-progress {
+  0% {
+    opacity:0;
+    left:0;
+    width:0;
+  }
+  15% {
+    opacity:1;
+  }
+  50% {
+    left:0;
+    opacity:1;
+  }
+  75% {
+    opacity:0.25;
+  }
+  100% {
+    left:75%;
+    width:75%;
+    opacity:0;
+  }
+}
+
+.leap-progress {
+  height:grid(0.5);
+  background:$leap-progress-background;
+
+  &.indefinite {
+    position:relative;
+    overflow:hidden;
+
+    &.hide {
+      display:none;
+    }
+
+    .leap-progress-bar {
+      background:inherit;
+      width:inherit;
+
+      &:before {
+        display:block;
+        position:absolute;
+        height:inherit;
+        content:'';
+        background:$leap-progress-foreground;
+        border-radius:3px;
+        animation:leap-keyframes-progress 3s ease infinite;
+        animation-delay:1.5s;
+      }
+
+      &:after {
+        display:block;
+        position:absolute;
+        height:inherit;
+        content:'';
+        background:$leap-progress-foreground;
+        border-radius:3px;
+        animation:leap-keyframes-progress 3s ease infinite;
+      }
+    }
+  }
+
+  &.complete {
+    .leap-progress-bar {
+      background:$leap-progress-background-complete;
+    }
+  }
+
+  .leap-progress-bar {
+    height:inherit;
+    background:$leap-progress-foreground;
+    border-radius:inherit;
+    transition:all 0.5s ease;
+  }
+}

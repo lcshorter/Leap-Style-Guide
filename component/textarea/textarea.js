@@ -1,0 +1,20 @@
+angular
+  .module('leap')
+  .directive({
+    leapTextarea:[
+      function(){
+        return {
+          restrict:'E',
+          replace:true,
+          scope:{
+            name:'@',
+            label:'@',
+            type:'@',
+            value:'=',
+            model:'='
+          },
+          templateUrl:'component/textarea/textarea.html'
+        };
+      }
+    ]
+  });

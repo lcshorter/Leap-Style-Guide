@@ -1,0 +1,26 @@
+.leap-users {
+  display:flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+
+  .user {
+    margin-left:grid(0.5);
+    cursor:default;   
+  }
+
+  .user-add {
+    margin-left:grid(0.5);
+    display:inline-block;
+
+    .leap-avatar {
+      cursor:pointer;
+      
+      p {
+        @include font(large, $leap-color-white);
+        font-weight:$leap-font-weight-bold;
+      }
+    }
+  }
+}

@@ -1,0 +1,159 @@
+$leap-error-text: $leap-color-alert !default;
+$leap-field-text-error: $leap-color-alert !default;
+
+$leap-form-label-text: $leap-color-gray60 !default;
+
+$leap-field-border: $leap-color-gray10 !default;
+$leap-field-border--focus: $leap-color-gray60 !default;
+$leap-field-border--error: $leap-color-alert !default;
+
+$leap-field-background: $leap-color-white !default;
+$leap-field-background--disabled: $leap-color-gray04 !default;
+$leap-field-background--error: $leap-color-white !default;
+
+$leap-field-text: $leap-color-gray100 !default;
+$leap-field-text--disabled: $leap-color-gray40 !default;
+$leap-field-text--error: $leap-color-gray40 !default;
+
+$leap-field-placeholder: $leap-color-gray40 !default;
+
+input,
+select,
+textarea {
+  outline:none;
+
+  &.leap-error {
+    border-color:$leap-field-border--error !important;
+    background:$leap-field-background--error !important;
+    color:$leap-field-text--error !important;
+  }
+}
+
+input:-moz-placeholder, /* Mozilla Firefox 4 to 18 */
+input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:$leap-field-placeholder !important;
+  opacity: 1;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+input::-webkit-input-placeholder, /* WebKit, Blink, Edge */
+input:-ms-input-placeholder, /* Internet Explorer 10-11 */
+input:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  color:$leap-field-placeholder !important;
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+
+/* Disable number spinner */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin:0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  width:100%;
+}
+
+input[type=text],
+input[type=password] {
+  -webkit-appearance: none;
+  @include box-shadow(0);
+  outline:none;
+}
+
+input,
+textarea {
+  width:100%;
+  padding:14px;
+  background:$leap-field-background;
+  border:1px solid $leap-field-border;
+  border-radius:grid(0.5);
+  outline:none;
+  @include font(medium);
+  color:$leap-field-text;
+  resize:none;
+  transition:border-color 0.5s ease;
+  -webkit-box-sizing:border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing:border-box;    /* Firefox, other Gecko */
+  box-sizing:border-box;         /* Opera/IE 8+ */
+
+  &:focus {
+    border-color:$leap-field-border--focus;
+    color:$leap-field-text !important;
+  }
+
+  &[disabled] {
+    background:$leap-field-background--disabled;
+    color:$leap-field-text--disabled;
+  }
+}
+
+textarea {
+  min-height:6em;
+}
+
+label {
+  display:block;
+  margin:0;
+  padding-bottom:grid();
+  @include font(small);
+  color:$leap-form-label-text;
+
+  em {
+    padding-left:grid(0.5);
+
+    &:before {
+      content:'('
+    }
+
+    &:after {
+      content:')'
+    }
+  }
+}
+
+.leap-fieldset {
+  margin-bottom:grid(2);
+
+  .leap-field-errors {
+    min-height:1.75em;
+    width:100%;
+    margin:0;
+    padding:0;
+    padding-top:0.25em;
+
+    li,
+    .leap-field-error {
+      margin:0;
+      padding:0;
+      line-height:1em;
+    }
+  }
+}
+
+.leap-field-errors {
+  margin:0;
+  padding:0;
+  list-style:none;
+
+  li,
+  .leap-field-error {
+    padding:0;
+    padding-top:2px;
+    font-size:12px;
+    color:$leap-error-text;
+  }
+}
+
+.labels {
+  display:flex;
+
+  label {
+    padding:0 10px 10px 0;
+  }
+}

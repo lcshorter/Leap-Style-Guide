@@ -1,0 +1,49 @@
+// page content wrapper
+.wrapper {
+  display: flex;
+  //height: 100vh;
+  color: #333333;
+  font-family: OpenSans-Light;
+}
+
+// max-width container for the responsive content of the page
+.breakpoint {
+  flex: 1;
+  max-width: 70em;
+  margin: auto;
+}
+
+
+
+// Styling for the Rows of the Typographic Scale
+////////////////////////////////////////////////////////////////////////////////
+
+// container for each hierarchical level in the Typographic Scale
+.leap-type-style {
+  display: flex;
+}
+
+// the 3 sections of information for each hierarchical level in the Typographic Scale
+.leap-type-style-section {
+  flex: 1;
+  flex-wrap: nowrap;
+  padding: 16px 0;
+}
+
+// the variable for the hierarchical level
+.data{
+  margin: auto;
+  font-family: Roboto-Slab;
+  font-size: 14px;
+  letter-spacing: 0.02px;
+  text-transform: none;
+  font-weight: 300;
+}
+
+.type-style-variable, .type-style-properties {
+  @extend .data;
+}
+
+.type-style-variable {
+  text-align: right;
+}

@@ -1,0 +1,43 @@
+<leap-module class="avatar">
+  <leap-avatar user="user" ng-repeat="user in module.users"></leap-avatar>
+</leap-module>
+
+
+<h1 id="user-avatars">User Avatars</h1>
+<h1 id="description">Description</h1>
+<p>User avatars are the visual representation of users within an application. This pattern details the rules that govern user avatars as well as the content that appears within them.</p>
+<img src="assets/avatars1.png"/>
+<h1 id="usage">Usage</h1>
+<p>User avatars are used to help people identify other users within the application. They may take the form of an uploaded portrait of the user or a colored fill with the user’s initials.</p>
+<h2 id="when-to-use">When to Use</h2>
+<ul>
+<li>This pattern is used anytime you need a visual representation of a user.</li>
+<li>This pattern is used in the global header as well as in all user management within a project.</li>
+</ul>
+<h2 id="when-not-to-use">When Not to Use</h2>
+<ul>
+<li>This pattern does not cover managing users at a subscription level.</li>
+</ul>
+<h1 id="detailed-interaction-description">Detailed Interaction Description</h1>
+<h2 id="default-avatar">Default Avatar</h2>
+<p>When a user is first invited to a project and has yet to accept their invitation to join the project, their avatar is a generic profile icon.</p>
+<img src="assets/avatars2.png"/>
+<h2 id="assigned-color">Assigned Color</h2>
+<p>When a user is in the system, but has yet to upload a profile picture for themselves, they are assigned a color from the system and their first and last initials are displayed within.</p>
+<img src="assets/avatars3.png"/>
+<img src="assets/avatars4.png"/>
+<p>A color is chosen for a give user based on their first and last initial. The possible colors are as follows.</p>
+<h2 id="profile-photo">Profile Photo</h2>
+<p>A profile photo will be displayed if a user has uploaded one.</p>
+<img src="assets/avatars5.png"/>
+<h1 id="visual-design-details">Visual Design Details</h1>
+<p>The avatar itself comes in two sizes. Large: 40x40</p>
+<img src="assets/avatars6.png"/>
+<p>Small: 24x24</p>
+<img src="assets/avatars7.png"/>
+<h1 id="design-considerations">Design Considerations</h1>
+<p>The colors have been chosen with consideration to LEAP’s existing color palette along with it’s ability to be displayed on both light and dark backgrounds. If there are legibility concerns or a need for more colors contact the LEAP design team to inquire further about updating the colors.</p>
+<h1 id="technical-constraints">Technical Constraints</h1>
+<p>None currently.</p>
+<h1 id="usability-validation">Usability Validation</h1>
+<p>See InVision user management.</p>

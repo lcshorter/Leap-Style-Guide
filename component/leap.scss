@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+@import 'reset/reset';
+
+$leap-grid-size: 8px !default;
+$leap-asset-root: 'assets/';
+
+$leap-breakpoint-large: 1296px !default;
+$leap-breakpoint-medium: 768px !default;
+$leap-breakpoint-small: 416px !default;
+$leap-breakpoint-space: $leap-grid-size * 10 !default;
+
+$leap-breakpoint-rule-large: 'only screen and (max-width:'+ $leap-breakpoint-large +')';
+$leap-breakpoint-rule-medium: 'only screen and (max-width:'+ $leap-breakpoint-medium +')';
+$leap-breakpoint-rule-small: 'only screen and (max-width:'+ $leap-breakpoint-small +')';
+
+// -- Grays -------------------------------------------------------------------------//
+
+$leap-color-white: #FFF !default;
+$leap-color-gray04: #F3F4F5 !default;
+$leap-color-gray10: #D4D8DE !default;
+$leap-color-gray40: #98A4B5 !default;
+$leap-color-gray60: #647286 !default;
+$leap-color-gray100: #2E3033 !default;
+$leap-color-black: $leap-color-gray100 !default;
+
+// -- Brand Colors -------------------------------------------------------------------------//
+
+$leap-color-primary: #2C95DD !default;
+$leap-color-primary-dark: darken($leap-color-primary,30%) !default;
+$leap-color-primary-light: lighten($leap-color-primary,10%) !default;
+$leap-color-primary-faded: lighten($leap-color-primary,30%) !default;
+
+// -- Reserved Colors -------------------------------------------------------------------------//
+
+$leap-color-success: #41BD8D !default;
+$leap-color-info: #FFB12F !default;
+$leap-color-alert: #E64C65 !default;
+
+// -- Typography -------------------------------------------------------------------------//
+
+$leap-font-family: 'Open Sans', sans-serif !default;
+
+$leap-font-weight-light: 300 !default;
+$leap-font-weight-regular: 400 !default;
+$leap-font-weight-semi-bold: 600 !default;
+$leap-font-weight-bold: 700 !default;
+
+// -- Spacing -------------------------------------------------------------------------//
+// -- move to a naming convention reflecting multiple of base in name, e.g. $leap-spacing-2base -------------------------------------------------------------------------//
+
+$leap-spacing-2x-small: $leap-grid-size * 0.5 !default;
+$leap-spacing-1x-small: $leap-grid-size * 1 !default;
+$leap-spacing-small: $leap-grid-size * 2 !default;
+$leap-spacing-medium: $leap-grid-size * 3 !default;
+$leap-spacing-large: $leap-grid-size * 4 !default;
+$leap-spacing-1x-large: $leap-grid-size * 5 !default;
+$leap-spacing-2x-large: $leap-grid-size * 7 !default;
+$leap-spacing-3x-large: $leap-grid-size * 10 !default;
+
+
+$leap-spacing-half-base: $leap-grid-size * 0.5 !default;
+$leap-spacing-1xbase: $leap-grid-size * 1 !default;
+$leap-spacing-2xbase: $leap-grid-size * 2 !default;
+$leap-spacing-3xbase: $leap-grid-size * 3 !default;
+$leap-spacing-4xbase: $leap-grid-size * 4 !default;
+$leap-spacing-5xbase: $leap-grid-size * 5 !default;
+$leap-spacing-6xbase: $leap-grid-size * 6 !default;
+$leap-spacing-7xbase: $leap-grid-size * 7 !default;
+$leap-spacing-8xbase: $leap-grid-size * 8 !default;
+$leap-spacing-9xbase: $leap-grid-size * 9 !default;
+$leap-spacing-10xbase: $leap-grid-size * 10 !default;
+$leap-spacing-15xbase: $leap-grid-size * 15 !default;
+
+
+// -- Animations -------------------------------------------------------------------------//
+
+@keyframes leap-keyframe-fade-in {
+  0% {
+    opacity:0;
+  }
+  
+  100% {
+    opacity:100;
+  }
+}
+
+@keyframes leap-keyframe-fade-out {
+  0% {
+    opacity:0;
+  }
+  
+  100% {
+    opacity:0;
+  }
+}
+
+
+
+
+
+// -- Mix-Ins ----------------------------------------------------------------------------//
+
+
+/**
+ * Sets a drop shadow for the element. The passed value is the "depth" that the component
+ * should reside on. The higher the number, the further away from the background it will
+ * appear to be. There are three levels of depth:
+ * 1 = Slighly higher than the base level; closest to the base
+ * 2 = Medium level element
+ * 3 = Highest position reserved for floating elements
+ * @mixin box-shadow
+ * @param {Number} $depth
+ */
+@mixin box-shadow($depth:1){
+  $color:rgba(46, 48, 51, (0.2 + ($depth * 0.05)));
+
+  @if $depth == 'none' {
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+    -ms-box-shadow:none;
+    -o-box-shadow:none;
+    box-shadow:none;
+  }
+  @else {
+    -webkit-box-shadow:((0px + $depth) (0px + $depth)) (3px * $depth) $color;
+    -moz-box-shadow:((0px + $depth) (0px + $depth)) (3px * $depth) $color;
+    -ms-box-shadow:((0px + $depth) (0px + $depth)) (3px * $depth) $color;
+    -o-box-shadow:((0px + $depth) (0px + $depth)) (3px * $depth) $color;
+    box-shadow:((0px + $depth) (0px + $depth)) (3px * $depth) $color;
+  }
+}
+
+
+/**
+ * Sets the border-radius property for an element
+ * @mixin border-radius
+ * @param {Mixed} $radius Radius to set; defaults to half of the grid-size defined
+ */
+@mixin border-radius($radius:$leap-grid-size/2){
+  -webkit-border-radius:$radius;
+  -moz-border-radius:$radius;
+  -ms-border-radius:$radius;
+  -o-border-radius:$radius;
+  border-radius:$radius;
+}
+
+
+/**
+ * Defines the font styling based off of the size passed. Optionally a color can be passed
+ * to render the font in a different color than it's inherited value.
+ * @mixin font
+ * @param {String} $size Font size name to mix in
+ * @param {String} $color (Optional) Color to display the text in
+ */
+@mixin font($size:small, $color:null){
+  @if $size == xx-small {
+    font-weight:$leap-font-weight-regular;
+    font-size:10px;
+    line-height:16px;
+    text-transform:uppercase;
+  }
+  @else if $size == x-small {
+    font-weight:$leap-font-weight-semi-bold;
+    font-size:12px;
+    line-height:16px;
+    text-transform:uppercase;
+  }
+  @else if $size == small {
+    font-weight: $leap-font-weight-regular;
+    font-size:12px;
+    line-height:16px;
+  }
+  @else if $size == small-light {
+    font-weight: $leap-font-weight-light;
+    font-size:12px;
+    line-height:16px;
+  }
+  @else if $size == medium-bold {
+    font-weight:$leap-font-weight-semi-bold;
+    font-size:16px;
+    line-height:24px;
+    text-transform:uppercase;
+  }
+  @else if $size == medium {
+    font-weight:$leap-font-weight-regular;
+    font-size:16px;
+    line-height:24px;
+  }
+  @else if $size == large {
+    font-weight:$leap-font-weight-light;
+    font-size:20px;
+    line-height:24px;
+  }
+  @else if $size == x-large {
+    font-weight:$leap-font-weight-light;
+    font-size:24px;
+    line-height:32px;
+  }
+  @else if $size == xx-large {
+    font-weight:$leap-font-weight-light;
+    font-size:32px;
+    line-height:40px;
+  }
+  @else if $size == xxx-large {
+    font-weight:$leap-font-weight-light;
+    font-size:48px;
+    line-height:56px;
+  }
+
+  @if $color {
+    color:$color;  
+  }
+}
+
+// -- Leap Typography ----------------------------------------------------------------------------//
+
+
+@mixin font($size:small, $color:null){
+  @if $size == 2x-small {
+    font-weight:$leap-font-weight-regular;
+    font-size:10px;
+    line-height:16px;
+  }
+  @else if $size == 2x-small-caps {
+    font-weight:$leap-font-weight-semi-bold;
+    font-size:10px;
+    line-height:16px;
+    text-transform:uppercase;
+  }
+  @else if $size == 1x-small {
+    font-weight:$leap-font-weight-regular;
+    font-size:12px;
+    line-height:16px;
+  }
+  @else if $size == 1x-small-caps {
+    font-weight:$leap-font-weight-semi-bold;
+    font-size:12px;
+    line-height:16px;
+    text-transform:uppercase;
+  }
+  @else if $size == small {
+    font-weight: $leap-font-weight-regular;
+    font-size:14px;
+    line-height:16px;
+  }
+  @else if $size == medium {
+    font-weight:$leap-font-weight-regular;
+    font-size:16px;
+    line-height:24px;
+  }
+  @else if $size == medium-caps {
+    font-weight:$leap-font-weight-semi-bold;
+    font-size:16px;
+    line-height:24px;
+    text-transform:uppercase;
+  }
+  @else if $size == large {
+    font-weight:$leap-font-weight-light;
+    font-size:20px;
+    line-height:24px;
+  }
+  @else if $size == 1x-large {
+    font-weight:$leap-font-weight-light;
+    font-size:24px;
+    line-height:32px;
+  }
+  @else if $size == 2x-large {
+    font-weight:$leap-font-weight-light;
+    font-size:32px;
+    line-height:40px;
+  }
+  @else if $size == 3x-large {
+    font-weight:$leap-font-weight-light;
+    font-size:40px;
+    line-height:48px;
+  }
+
+  @if $color {
+    color:$color;  
+  }
+}
+
+
+
+/**
+ * Creates a cheveron
+ * @mixin cheveron
+ * @param {Color} $color Cheveron color
+ * @param {Size} $size Size of the cheveron
+ * @param {String} $direction Direction to display the cheveron; values: right, left, down, up
+ */
+@mixin cheveron($color:$leap-color-black, $size:grid(0.5), $direction:'right', $location:'before'){
+  @if $location == 'before' {
+    &:before {
+      position:relative;
+      content:'';
+      width:0; 
+      height:0;
+      font-size:0;
+      border:$size solid transparent;
+
+      @if $direction == 'right' {
+        top:-($size);
+        border-left-color:$color;
+      }
+      @else if $direction == 'left' {
+        top:-($size);
+        border-right-color:$color;
+      }
+      @else if $direction == 'down' {
+        top:$size;
+        border-top-color:$color;
+      }
+      @else if $direction == 'up' {
+        top:$size;
+        border-bottom-color:$color;
+      }
+    }
+  }
+  @else {
+    &:after {
+      position:relative;
+      top:-($size);
+      content:'';
+      width:0; 
+      height:0;
+      font-size:0;
+      border:$size solid transparent;
+
+      @if $direction == 'right' {
+        top:-($size);
+        border-left-color:$color;
+      }
+      @else if $direction == 'left' {
+        top:-($size);
+        border-right-color:$color;
+      }
+      @else if $direction == 'down' {
+        top:-($size/2);
+        border-top-color:$color;
+      }
+      @else if $direction == 'up' {
+        top:-($size/2);
+        border-bottom-color:$color;
+      }
+    }
+  }
+}
+
+
+/**
+ * Creates a bullet
+ * @mixin bullet
+ * @param {Color} $color Cheveron color
+ * @param {Size} $size Size of the cheveron
+ */
+@mixin bullet($color:$leap-color-black, $size:grid(0.5)){
+  position:relative;
+  padding-left:$size*2;
+
+  &:before {
+    position:absolute;
+    left:0;
+    top:$size+3;
+    display:block;
+    content:'';
+    width:$size;
+    height:$size;
+    background:$color;
+    border-radius:$size;
+    font-size:0;
+    line-height:0;
+  }
+}
+
+
+
+/**
+ * Mixes in all of the properties to have a single background image
+ * @mixin bg
+ * @param {String} $asset 
+ * @return {String} 
+ */
+@mixin bg($asset, $position:center center){
+  background-image:asset-url($asset);
+  background-repeat:no-repeat;
+  background-position:$position;
+}
+
+
+
+/**
+ * Creates a fill of color and image for the element.
+ * @mixin bg
+ * @param {String} $asset 
+ * @return {String} 
+ */
+@mixin bg-fill($asset, $color:$leap-color-primary, $opacity:0.1){
+  background:$color;
+
+  &:before {
+    content:'';
+    position:absolute;
+    overflow:hidden;
+    height:100%;
+    width:100%;
+    left:0;
+    top:0;
+    opacity:$opacity;
+    background-image:asset-url($asset);
+    background-repeat:no-repeat;
+    background-position:center;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+  }
+}
+
+
+/**
+ * Creates a background stripe pattern
+ * @mixin stripes
+ * @param {Color} $c1 Primary stripe color
+ * @param {Color} $c2 Secondary stripe color
+ * @param {Size} $size Stripe width
+ * @param {Degres} $angle Angule to display the stripes in. Pattern matches up at positive and negative values of: 0, 45, 90, 135 and 190
+ */
+@mixin bg-stripes($c1:$leap-color-gray04, $c2:transparent, $size:grid(), $angle:45deg){
+  background-size:$size $size;
+  background-image:-moz-linear-gradient($angle, $c1 25%, $c2 25%, $c2 50%, $c1 50%, $c1 75%, $c2 75%, $c2);
+  background-image:-webkit-linear-gradient(($angle - ($angle * 2)), $c1 25%, $c2 25%, $c2 50%, $c1 50%, $c1 75%, $c2 75%, $c2);
+  background-image:-ms-linear-gradient(($angle - ($angle * 2)), $c1 25%, $c2 25%, $c2 50%, $c1 50%, $c1 75%, $c2 75%, $c2);
+  background-image:-o-linear-gradient(($angle - ($angle * 2)), $c1 25%, $c2 25%, $c2 50%, $c1 50%, $c1 75%, $c2 75%, $c2);
+  background-image:linear-gradient(($angle - ($angle * 2)), $c1 25%, $c2 25%, $c2 50%, $c1 50%, $c1 75%, $c2 75%, $c2);
+}
+
+
+
+
+
+// -- Functions -------------------------------------------------------------------------//
+
+/**
+ * This returns a pixel size that is a factor of the defined grid-size
+ * @function grid
+ * @param {Number} $factor (Optional) Factor to multiply the grid size by
+ * @return {Number} 
+ */
+@function grid($factor:1){
+  @return $leap-grid-size * $factor;
+}
+
+
+/**
+ * Returns an asset path with $leap-asset-root as it's base directory
+ * @function asset
+ * @param {String} $asset 
+ * @return {String} 
+ */
+@function asset-url($asset){
+  @return url($leap-asset-root + $asset);
+}
+
+
+
+
+
+// -- Default Styles --------------------------------------------------------------------//
+
+html,
+body {
+  height:100%;
+  @include font();
+  font-family: $leap-font-family;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.breakpoint {
+  max-width:$leap-breakpoint-large;
+  padding:0 $leap-breakpoint-space;
+  margin:0 auto;
+}
+
+.leap-text-2x-small { @include font(2x-small); }
+.leap-text-2x-small-caps { @include font(2x-small-caps); }
+.leap-text-1x-small { @include font(1x-small); }
+.leap-text-1x-small-caps { @include font(1x-small-caps); }
+.leap-text-small { @include font(small); }
+.leap-text-medium { @include font(medium); }
+.leap-text-medium-caps { @include font(medium-caps); }
+.leap-text-large { @include font(large); }
+.leap-text-1x-large { @include font(1x-large); }
+.leap-text-2x-large { @include font(2x-large); }
+.leap-text-3x-large { @include font(3x-large); }
+
+
+
+// -- Breakpoints -----------------------------------------------------------------------//
+
+@media #{$leap-breakpoint-rule-large} {
+  .breakpoint {
+    margin:0 $leap-breakpoint-space;
+    padding:0;
+  }
+}
+
+
+
+
+@media #{$leap-breakpoint-rule-small} {
+  .breakpoint {
+    margin:0;
+  }
+}

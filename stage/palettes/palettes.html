@@ -1,0 +1,18 @@
+<div class="palettes">
+  <div ng-repeat="palette in module.groups" class="palette">
+    <h3>{{ palette.name }}</h3>
+    <div class="colors">
+      <div ng-repeat="color in palette.colors" class="color">
+        <leap-card>
+          <div class="content">
+            <div id="sg-color-{{ color }}" class="content leap-color-{{ color }}"></div>
+          </div>
+          <div class="code">
+            <code class="variable">$leap-color-{{ color }}</code>
+            <code>{{ css('#sg-color-' + color, ['background-color'], true) }}</code>
+          </div>
+        </leap-card>
+      </div>
+    </div>
+  </div>
+</div>

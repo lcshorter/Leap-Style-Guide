@@ -1,0 +1,91 @@
+$leap-menu-background: $leap-color-white !default;
+$leap-menu-item-division: $leap-color-gray04 !default;
+
+$leap-menu-link-text: $leap-color-gray100 !default;
+$leap-menu-link-text--hover: $leap-color-gray60 !default;
+$leap-menu-link-text--active: $leap-color-gray40 !default;
+$leap-menu-link-text--disabled: $leap-color-gray40 !default;
+
+.leap-menu {
+  position:absolute;
+  z-index:999;
+  min-width:grid(32);
+  margin-top:grid(0.5);
+  padding:grid(3);
+  background:$leap-menu-background;
+  @include border-radius();
+  @include box-shadow(2);
+
+  &.hide {
+    display:none;
+  }
+
+  .leap-link {
+    display:block;
+    margin:0 -(grid(3)) !important;
+    padding:grid(3);
+    border-top:1px solid $leap-menu-item-division;
+    font-weight:$leap-font-weight-semi-bold;
+    color:$leap-menu-link-text;
+
+    &:hover,
+    &:focus {
+      color:$leap-menu-link-text--hover;
+    }
+
+    &:active {
+      color:$leap-menu-link-text--active;
+    }
+
+    &.disabled {
+      color:$leap-menu-link-text--disabled;
+    }
+  }
+}
+
+.leap-menu-handle {
+  font-weight: $leap-font-weight-bold;
+  color:$leap-menu-link-text;
+
+  &:hover,
+  &:focus {
+    color:$leap-menu-link-text--hover;
+  }
+
+  &:active {
+    color:$leap-menu-link-text--active;
+  }
+
+  &.disabled {
+    color:$leap-menu-link-text--disabled;
+  }
+
+  &.open {
+    color:$leap-menu-link-text--disabled;
+    
+    &:hover,
+    &:focus {
+      color:$leap-menu-link-text--disabled;
+    }
+
+    &:active {
+      color:$leap-menu-link-text--disabled;
+    }
+  }
+}
+
+.leap-menu-item {
+  outline:none !important;
+
+  &:first-child {
+    margin-top:-(grid(3));
+    
+    .leap-link {
+      border-top:none;
+    }
+  }
+
+  &:last-child {
+    margin-bottom:-(grid(3));
+  }
+}

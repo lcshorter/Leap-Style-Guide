@@ -1,0 +1,78 @@
+$leap-tooltip-background: $leap-color-gray100 !default;
+$leap-tooltip-color: $leap-color-white !default;
+
+$leap-tooltip-fade-in: 0.75s;
+
+.leap-tooltip {
+  @include box-shadow();
+  position:absolute;
+  display:block;
+  z-index:300;
+  top:-40px;
+  left:auto;
+  padding:8px 15px;
+  background:$leap-tooltip-background;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.05em;
+  white-space:nowrap;
+  text-transform:uppercase;
+  color:$leap-tooltip-color;
+  transition:opacity 0.5s ease;
+  transition-delay:$leap-tooltip-fade-in;
+
+  &.hide {
+    display:block !important;
+    opacity:0;
+    top:-5000px !important;
+    left:-5000px !important;
+    transition:none;
+    transition-delay:0;
+  }
+
+  &:after {
+    position:absolute;
+    bottom:-5px;
+    left:50%;
+    margin:0 0 0 -5px;
+    transform:rotate(45deg);
+    content:'';
+    background:$leap-tooltip-background;
+    height:10px;
+    width:10px;
+  }
+
+  &.bottom {
+    top:auto;
+    bottom:-40px;
+  
+    &:after {
+      top:-5px;
+      bottom:auto;
+    }
+  }
+
+  &.left {
+    top:auto;
+
+    &:after {
+      top:50%;
+      bottom:auto;
+      left:auto;
+      right:-5px;
+      margin:-5px 0 0 0;
+    }
+  }
+
+  &.right {
+    top:auto;
+
+    &:after {
+      top:50%;
+      bottom:auto;
+      left:-5px;
+      right:auto;
+      margin:-5px 0 0 0;
+    }
+  }
+}

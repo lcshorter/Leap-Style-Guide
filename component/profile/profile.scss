@@ -1,0 +1,43 @@
+.leap-profile {
+  .name {
+    @include bg('cheveron.png', center right);
+    padding-right:grid(1.5);
+    max-width:grid(20);
+
+    span {
+      display:block;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+  }
+
+  .user {
+    display:flex;
+    margin:0 -(grid(3));
+    padding:grid(3);
+    text-transform:none;
+    cursor:default;
+
+    .profile {
+      padding:grid(0.25) 0 0 grid(2);
+    
+      h5 {
+        max-width:grid(25);
+        overflow:hidden;
+        @include font(medium);
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        color:$leap-color-gray100;
+      }
+
+      p {
+        max-width:grid(25);
+        overflow:hidden;
+        @include font(small);
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        color:$leap-color-gray60;
+      }
+    }
+  }
+}

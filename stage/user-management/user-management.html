@@ -1,0 +1,56 @@
+<h1 id="user-management">User Management</h1>
+<img src="assets/userManagement1.png"/>
+<h1 id="description">Description</h1>
+<p>User management covers a user's ability to add and remove participants from a project as well as modify their permission level within that project. This pattern refers to user management at the application level.</p>
+<h1 id="usage">Usage</h1>
+<p>User management is used to invite new users as well as add and remove existing users to a project. It is also used to change permission levels of participants in a project. It can be used to view which users are currently participating on a given project.</p>
+<h2 id="when-to-use">When to Use</h2>
+<ul>
+<li>This pattern should be used when you need to add or remove users</li>
+<li>This pattern should be used in applications that have different permission levels for users.</li>
+<li>This pattern should be used in applications that have a subset of users participating in a subset of projects within the application.</li>
+</ul>
+<h2 id="when-not-to-use">When Not to Use</h2>
+<ul>
+<li>This pattern does not cover managing users at a subscription level.</li>
+<li>This pattern does not cover managing users across applications.</li>
+</ul>
+<h1 id="detailed-interaction-description">Detailed Interaction Description</h1>
+<h2 id="selecting-roles">Selecting Roles</h2>
+<p>Roles are selectable with a dropdown. When the list of roles is short, no background color/border is used in the dropdown.</p>
+<img src="assets/userManagement2.png"/>
+<img src="assets/userManagement3.png"/>
+<h2 id="search">Search</h2>
+<p>The search field allows you to not only search for existing users in the system, but also invite new users via email to the application. When you enter an email that isn't recognized, you have the option of sending them an invite via email.</p>
+<img src="assets/userManagement4.png"/>
+<p>View when user cannot find results</p>
+<img src="assets/userManagement5.png"/>
+<p>The &quot;add&quot; link becomes active when the system detects a valid email address with the format: &quot;xxxxxx@xxxx.c”</p>
+<img src="assets/userManagement6.png"/>
+<p>Invited users appear at the top of the list, making it easy to un-invite them or resend their invitation.</p>
+<p>The information for a newly added user includes:</p>
+<ul>
+<li>Email Address</li>
+<li>Invitation status (pending)</li>
+<li>Invite link for resending email invitation</li>
+<li>Role selector</li>
+</ul>
+<h2 id="removing-users">Removing Users</h2>
+<p>The system will surface an error if the last owner is being removed or if the owner has sections that belong to them. There must always be at least one owner in the document at all times and the owner must re-assign his sections before he can be removed.</p>
+<img src="assets/userManagement7.png"/>
+<img src="assets/userManagement8.png"/>
+<h2 id="non-admin-view">Non Admin View</h2>
+<p>The non-admin view omits the role dropdown select as well as the ability to add/remove users. They have the ability to search through users in the application, but not all users on a given LEAP subscription.</p>
+<h1 id="visual-design-details">Visual Design Details</h1>
+<p>Redlines can be found on <a href="https://zpl.io/I0oXd">Zeplin</a>. High level design layout:</p>
+<img src="assets/userManagement9.png"/>
+<p>List element layout:</p>
+<img src="assets/userManagement10.png"/>
+<p>Footer element layout:</p>
+<img src="assets/userManagement11.png"/>
+<h1 id="design-considerations">Design Considerations</h1>
+<p>While user management takes the form of a modal in Concert, the pattern isn't limited to a modal. If needed, it can be expanded to a larger layout. The list of users is displayed alphabetically, with invited users shown at the top of the list.</p>
+<h1 id="technical-constraints">Technical Constraints</h1>
+<p>None currently.</p>
+<h1 id="usability-validation">Usability Validation</h1>
+<p>See InVision user management.</p>

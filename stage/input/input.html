@@ -1,0 +1,48 @@
+<div class="leap-fieldset fieldset-{{ name }} leap-input">
+  <label ng-show="label" for="{{ name }}"><span translate>{{ label }}</span></label>
+  <input ng-model="model" id="{{ name }}" name="{{ name }}" type="{{ type }}" placeholder="{{ placeholder }}" autocomplete="off">
+</div>
+<h1 id="text-input-field">Text Input Field</h1>
+<h1 id="description">Description</h1>
+<p>Text input fields cover a user’s ability to enter text or numbers into the system.</p>
+<h1 id="usage">Usage</h1>
+<p>Text input fields are used whenever the system requires user input in the form of text and numbers. It can be used both with and without a label depending on the context of the field.</p>
+<img src="assets/inputField1.png"/> <img src="assets/inputField2.png"/>
+<h2 id="section"></h2>
+<h2 id="when-to-use">When to Use</h2>
+<ul>
+<li>This pattern should be used when users need to input text and numbers.</li>
+<li>This pattern should be used for text area input as well. ## When Not to Use</li>
+<li>This pattern does not cover header level text editing.</li>
+</ul>
+<h1 id="detailed-interaction-description">Detailed Interaction Description</h1>
+<p>Text fields have five different states - default, focused, filled, disabled, and error.</p>
+<h2 id="default">Default</h2>
+<p>A default text field means that text has not been entered into the field and it is still displaying its placeholder text.</p>
+<img src="assets/inputField3.png"/>
+<h2 id="focused">Focused</h2>
+<p>A focused state means that the field currently has the user’s focus and is being edited. Upon first getting user focus, the text cursor takes the place of the placeholder text.</p>
+<img src="assets/inputField4.png"/>
+<img src="assets/inputField5.png"/>
+<h2 id="filled">Filled</h2>
+<p>A filled input text field means that text has been entered by the user but the field no loner has focus.</p>
+<img src="assets/inputField6.png"/>
+<h2 id="disabled">Disabled</h2>
+<p>A disabled text field means that input text field is not editable.</p>
+<img src="assets/inputField7.png"/>
+<h2 id="error">Error</h2>
+<p>An error state means that there is an issue with the text entered and the system cannot take in the input that has been entered. The user must fix the error before it can be submitted</p>
+<img src="assets/inputField8.png"/>
+<h2 id="text-areas">Text Areas</h2>
+<p>Input text fields may also take the form of text areas, allowing users to enter more than one line of text.</p>
+<img src="assets/textArea1.png"/>
+<p>An error is displayed if the user enters more characters than is allowed. By default, all text areas have a 150 word limit. Just like text input fields, text areas can contain labels as needed.</p>
+<img src="assets/textArea2.png"/>
+<h1 id="visual-design-details">Visual Design Details</h1>
+<img src="assets/inputField9.png"/>
+<h1 id="design-considerations">Design Considerations</h1>
+<p>None</p>
+<h1 id="technical-constraints">Technical Constraints</h1>
+<p>None currently.</p>
+<h1 id="usability-validation">Usability Validation</h1>
+<p>N/A</p>

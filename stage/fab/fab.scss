@@ -1,0 +1,7 @@
+.fab {
+  .leap-fab-primary {
+    .leap-fab-inner {
+      @include font(xx-large, $leap-color-white);
+    }
+  }
+}

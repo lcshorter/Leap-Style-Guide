@@ -1,0 +1,34 @@
+.wrapper {
+  display: flex;
+  color: #333333;
+  font-family: OpenSans-Light;
+}
+
+.breakpoint {
+  flex: 1;
+  max-width: 70em;
+  margin: auto;
+}
+
+.leap-type-style {
+  display: flex;
+}
+
+.leap-type-style-section {
+  flex: 1;
+  flex-wrap: nowrap;
+  padding: 16px 0;
+}
+
+.data, .type-style-variable, .type-style-properties {
+  margin: auto;
+  font-family: Roboto-Slab;
+  font-size: 14px;
+  letter-spacing: 0.02px;
+  text-transform: none;
+  font-weight: 300;
+}
+
+.type-style-variable {
+  text-align: right;
+}

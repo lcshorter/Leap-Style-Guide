@@ -1,0 +1,3365 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain) */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Basic element and font defaults */
+sup,
+sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/*
+ * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal;
+}
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Corrects inability to style clickable `input` types in iOS.
+ * 3. Improves usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+/*
+ * 1. Addresses box sizing set to `content-box` in IE 8/9.
+ * 2. Removes excess padding in IE 8/9.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/*
+ * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/*
+ * Removes inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+ * Removes inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/*
+ * Removes the clear field "X" button in IE10+
+ */
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE 8/9.
+ * 2. Improves readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/*
+ * Improves readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Font Reset */
+body {
+  margin: 0;
+  font: 13px/1.231 arial,helvetica,clean,sans-serif;
+}
+
+select,
+input,
+button,
+textarea {
+  font: 99% arial,helvetica,clean,sans-serif;
+}
+
+table {
+  font-size: inherit;
+  font: 100%;
+}
+
+pre,
+code,
+kbd,
+samp,
+tt {
+  font-family: monospace;
+  line-height: 100%;
+}
+
+@keyframes leap-keyframe-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+@keyframes leap-keyframe-fade-out {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/**
+ * Sets a drop shadow for the element. The passed value is the "depth" that the component
+ * should reside on. The higher the number, the further away from the background it will
+ * appear to be. There are three levels of depth:
+ * 1 = Slighly higher than the base level; closest to the base
+ * 2 = Medium level element
+ * 3 = Highest position reserved for floating elements
+ * @mixin box-shadow
+ * @param {Number} $depth
+ */
+/**
+ * Sets the border-radius property for an element
+ * @mixin border-radius
+ * @param {Mixed} $radius Radius to set; defaults to half of the grid-size defined
+ */
+/**
+ * Defines the font styling based off of the size passed. Optionally a color can be passed
+ * to render the font in a different color than it's inherited value.
+ * @mixin font
+ * @param {String} $size Font size name to mix in
+ * @param {String} $color (Optional) Color to display the text in
+ */
+/**
+ * Creates a cheveron
+ * @mixin cheveron
+ * @param {Color} $color Cheveron color
+ * @param {Size} $size Size of the cheveron
+ * @param {String} $direction Direction to display the cheveron; values: right, left, down, up
+ */
+/**
+ * Creates a bullet
+ * @mixin bullet
+ * @param {Color} $color Cheveron color
+ * @param {Size} $size Size of the cheveron
+ */
+/**
+ * Mixes in all of the properties to have a single background image
+ * @mixin bg
+ * @param {String} $asset 
+ * @return {String} 
+ */
+/**
+ * Creates a fill of color and image for the element.
+ * @mixin bg
+ * @param {String} $asset 
+ * @return {String} 
+ */
+/**
+ * Creates a background stripe pattern
+ * @mixin stripes
+ * @param {Color} $c1 Primary stripe color
+ * @param {Color} $c2 Secondary stripe color
+ * @param {Size} $size Stripe width
+ * @param {Degres} $angle Angule to display the stripes in. Pattern matches up at positive and negative values of: 0, 45, 90, 135 and 190
+ */
+/**
+ * This returns a pixel size that is a factor of the defined grid-size
+ * @function grid
+ * @param {Number} $factor (Optional) Factor to multiply the grid size by
+ * @return {Number} 
+ */
+/**
+ * Returns an asset path with $leap-asset-root as it's base directory
+ * @function asset
+ * @param {String} $asset 
+ * @return {String} 
+ */
+html,
+body {
+  height: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.breakpoint {
+  max-width: 1296px;
+  padding: 0 80px;
+  margin: 0 auto;
+}
+
+.leap-text-2x-small {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 16px;
+}
+
+.leap-text-2x-small-caps {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.leap-text-1x-small {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.leap-text-1x-small-caps {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.leap-text-small {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.leap-text-medium {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.leap-text-medium-caps {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.leap-text-large {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.leap-text-1x-large {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.leap-text-2x-large {
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.leap-text-3x-large {
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+@media only screen and (max-width: 1296px) {
+  .breakpoint {
+    margin: 0 80px;
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 416px) {
+  .breakpoint {
+    margin: 0;
+  }
+}
+.leap-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  background: #98A4B5;
+  border-radius: 4em;
+  cursor: default;
+}
+.leap-avatar p {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0;
+  line-height: 0.8em;
+  font-weight: 700;
+  font-size: 12px;
+  color: #FFF;
+}
+
+.leap-button {
+  display: inline-block;
+  min-width: 200px;
+  padding: 1.3em 3em;
+  background: #2C95DD;
+  border: 0;
+  border-radius: 2em;
+  outline: none;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  transition: all 0.25s ease;
+  text-transform: uppercase;
+  color: #FFF;
+  cursor: pointer;
+}
+.leap-button.expand {
+  display: block;
+  min-width: 100%;
+}
+.leap-button:hover {
+  background: #2C95DD;
+  color: #FFF;
+}
+.leap-button:active {
+  background: #b0d7f2;
+  color: #FFF;
+}
+.leap-button[disabled] {
+  background: #b0d7f2;
+  color: #FFF;
+}
+.leap-button.secondary {
+  background: transparent;
+  border: 1px solid #2C95DD;
+  color: #2C95DD;
+}
+.leap-button.secondary:hover, .leap-button.secondary:active {
+  background: transparent;
+}
+.leap-button.secondary:hover {
+  border-color: #104060;
+  color: #104060;
+}
+.leap-button.secondary:active {
+  border-color: #58abe4;
+  color: #58abe4;
+}
+.leap-button.secondary[disabled] {
+  background: transparent;
+  border-color: #b0d7f2;
+}
+.leap-button.secondary.fatal {
+  border-color: #E64C65;
+  color: #E64C65;
+}
+.leap-button.secondary.inverted {
+  border-color: #FFF;
+  color: #FFF;
+}
+
+.leap-card {
+  overflow: hidden;
+  background: #FFF;
+  -webkit-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -moz-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -ms-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -o-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+
+@keyframes leap-keyframe-fab-open {
+  0% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(65deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes leap-keyframe-fab-close {
+  0% {
+    transform: rotate(45deg);
+  }
+  75% {
+    transform: rotate(-25deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes leap-keyframe-fab-show {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes leap-keyframe-fab-hide {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+}
+.leap-fab {
+  position: relative;
+  display: block;
+  margin-bottom: 24px;
+  outline: none;
+}
+
+.leap-fab-primary {
+  animation: leap-keyframe-fab-show 0.25s 1 forwards;
+}
+.leap-fab-primary.hide {
+  display: block;
+  animation: leap-keyframe-fab-hide 0.25s 1 forwards;
+}
+
+.leap-fab-button {
+  -webkit-box-shadow: 3px 3px 9px rgba(46, 48, 51, 0.35);
+  -moz-box-shadow: 3px 3px 9px rgba(46, 48, 51, 0.35);
+  -ms-box-shadow: 3px 3px 9px rgba(46, 48, 51, 0.35);
+  -o-box-shadow: 3px 3px 9px rgba(46, 48, 51, 0.35);
+  box-shadow: 3px 3px 9px rgba(46, 48, 51, 0.35);
+  position: relative;
+  z-index: 2;
+  min-width: auto;
+  height: 56px;
+  width: 56px;
+  padding: 0;
+  background: #2C95DD;
+  border: 0;
+  border-radius: 5em;
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1em;
+  letter-spacing: normal;
+  color: #FFF;
+}
+
+.leap-fab-option {
+  z-index: 1;
+  position: relative;
+  display: none;
+  opacity: 0;
+  top: 0;
+  background: #FFF;
+  padding: 1em;
+  color: #2C95DD;
+  transition: top 0.5s ease, opacity 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
+}
+.leap-fab-option:hover {
+  background: #2C95DD;
+  color: #FFF;
+}
+.leap-fab-option:active {
+  background: #b0d7f2;
+  color: #FFF;
+}
+
+.leap-fab-label {
+  position: absolute;
+  right: 60px;
+  overflow: hidden;
+  opacity: 0;
+  max-width: 0;
+  margin-top: 11px;
+  margin-right: 5px;
+  background: #2C95DD;
+  border-radius: 3em;
+  color: #FFF;
+  transition: max-width 0.5s ease 0s,opacity 0.15s ease 0s;
+}
+.leap-fab-label p {
+  opacity: 0;
+  margin: 0;
+  padding: 7px 18px;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: opacity 0.25s ease 0s;
+}
+.leap-fab-label.expanded {
+  max-width: 500px;
+  opacity: 0.9;
+}
+.leap-fab-label.expanded p {
+  opacity: 0.9;
+}
+
+.leap-fab-group {
+  position: relative;
+  display: inline-block;
+}
+.leap-fab-group.initial .leap-fab-option, .leap-fab-group.opened .leap-fab-option, .leap-fab-group.closing .leap-fab-option {
+  display: block;
+}
+.leap-fab-group.initial .leap-fab:hover .leap-fab-label, .leap-fab-group.closing .leap-fab:hover .leap-fab-label {
+  opacity: 0 !important;
+}
+.leap-fab-group.initial .leap-fab-option:hover, .leap-fab-group.closing .leap-fab-option:hover {
+  background: inherit;
+  color: inherit;
+}
+.leap-fab-group.initial .leap-fab-option {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  transform: scale(1.5);
+}
+.leap-fab-group.opened .leap-fab-primary .leap-fab-inner {
+  animation: leap-keyframe-fab-open 0.5s 1 forwards;
+}
+.leap-fab-group.opened .leap-fab-option {
+  opacity: 0.9;
+  margin-top: 5px;
+  transform: scale(1);
+}
+.leap-fab-group.opened .leap-fab:nth-child(1) .leap-fab-option {
+  transition-delay: 0.05s;
+}
+.leap-fab-group.opened .leap-fab:nth-child(2) .leap-fab-option {
+  transition-delay: 0.1s;
+}
+.leap-fab-group.opened .leap-fab:nth-child(3) .leap-fab-option {
+  transition-delay: 0.15s;
+}
+.leap-fab-group.opened .leap-fab:nth-child(4) .leap-fab-option {
+  transition-delay: 0.2s;
+}
+.leap-fab-group.opened .leap-fab:nth-child(5) .leap-fab-option {
+  transition-delay: 0.25s;
+}
+.leap-fab-group.closing .leap-fab-primary .leap-fab-inner {
+  animation: leap-keyframe-fab-close 0.5s 1;
+}
+.leap-fab-group.closing .leap-fab-option {
+  opacity: 0;
+  transform: scale(0.1);
+}
+.leap-fab-group.closing .leap-fab:nth-child(1) .leap-fab-option {
+  transition-delay: 0.2s;
+}
+.leap-fab-group.closing .leap-fab:nth-child(2) .leap-fab-option {
+  transition-delay: 0.15s;
+}
+.leap-fab-group.closing .leap-fab:nth-child(3) .leap-fab-option {
+  transition-delay: 0.1s;
+}
+.leap-fab-group.closing .leap-fab:nth-child(4) .leap-fab-option {
+  transition-delay: 0.05s;
+}
+.leap-fab-group.closing .leap-fab:nth-child(5) .leap-fab-option {
+  transition-delay: 0s;
+}
+
+input,
+select,
+textarea {
+  outline: none;
+}
+input.leap-error,
+select.leap-error,
+textarea.leap-error {
+  border-color: #E64C65 !important;
+  background: #FFF !important;
+  color: #98A4B5 !important;
+}
+
+input:-moz-placeholder,
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #98A4B5 !important;
+  opacity: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+input::-webkit-input-placeholder,
+input:-ms-input-placeholder,
+input:placeholder-shown {
+  /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  color: #98A4B5 !important;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Disable number spinner */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  width: 100%;
+}
+
+input[type=text],
+input[type=password] {
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+  -moz-box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+  -ms-box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+  -o-box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+  box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+  outline: none;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 14px;
+  background: #FFF;
+  border: 1px solid #D4D8DE;
+  border-radius: 4px;
+  outline: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2E3033;
+  resize: none;
+  transition: border-color 0.5s ease;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+input:focus,
+textarea:focus {
+  border-color: #647286;
+  color: #2E3033 !important;
+}
+input[disabled],
+textarea[disabled] {
+  background: #F3F4F5;
+  color: #98A4B5;
+}
+
+textarea {
+  min-height: 6em;
+}
+
+label {
+  display: block;
+  margin: 0;
+  padding-bottom: 8px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #647286;
+}
+label em {
+  padding-left: 4px;
+}
+label em:before {
+  content: "(";
+}
+label em:after {
+  content: ")";
+}
+
+.leap-fieldset {
+  margin-bottom: 16px;
+}
+.leap-fieldset .leap-field-errors {
+  min-height: 1.75em;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  padding-top: 0.25em;
+}
+.leap-fieldset .leap-field-errors li,
+.leap-fieldset .leap-field-errors .leap-field-error {
+  margin: 0;
+  padding: 0;
+  line-height: 1em;
+}
+
+.leap-field-errors {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.leap-field-errors li,
+.leap-field-errors .leap-field-error {
+  padding: 0;
+  padding-top: 2px;
+  font-size: 12px;
+  color: #E64C65;
+}
+
+.labels {
+  display: flex;
+}
+.labels label {
+  padding: 0 10px 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #2C95DD;
+  transition: color 0.25s ease;
+}
+a:hover, a:focus {
+  color: #104060;
+  outline: none;
+}
+a:hover .leap-icon, a:focus .leap-icon {
+  text-decoration: none;
+  color: inherit;
+}
+a:active {
+  color: #b0d7f2;
+}
+a:active .leap-icon {
+  color: inherit;
+}
+a:disabled, a.disabled {
+  color: #b0d7f2;
+  cursor: default;
+}
+a:disabled .leap-icon, a.disabled .leap-icon {
+  color: inherit;
+}
+a .leap-icon {
+  display: inline-block;
+  margin-left: 20px;
+  font-size: inherit;
+  color: inherit;
+}
+
+.leap-link {
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+.leap-link:hover, .leap-link:focus {
+  text-decoration: none;
+}
+.leap-link.gray {
+  color: #647286;
+}
+.leap-link.gray:hover, .leap-link.gray:focus {
+  color: #2E3033;
+}
+.leap-link.gray:active {
+  color: #98A4B5;
+}
+.leap-link.gray:disabled, .leap-link.gray.disabled {
+  color: #98A4B5;
+}
+
+@keyframes leap-keyframe-list-row-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.leap-list-row,
+.leap-list-header,
+.leap-list-footer {
+  display: flex;
+  padding: 0 4px;
+}
+
+.leap-list-col {
+  flex: 1;
+  padding: 24px 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2E3033;
+}
+
+.leap-list-header {
+  border-bottom: 1px solid #F3F4F5;
+}
+.leap-list-header .leap-list-col {
+  padding: 24px 8px 8px;
+  color: #2E3033;
+}
+.leap-list-header .leap-link {
+  margin: 0;
+  color: #2E3033;
+}
+
+.leap-list-footer {
+  border-top: 1px solid #F3F4F5;
+}
+
+.leap-list-row {
+  animation: leap-keyframe-list-row-fade-in 0.25s 1 forwards;
+  opacity: 0;
+  border-bottom: 1px solid #F3F4F5;
+  transition: all 0.25s ease;
+}
+.leap-list-row:last-child {
+  border-bottom: none;
+}
+
+.leap-list-row:hover {
+  background: #F3F4F5;
+}
+
+.leap-list-row:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.leap-list-row:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.leap-list-row:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.leap-list-row:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.leap-list-row:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.leap-list-row:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.leap-list-row:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.leap-list-row:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+.leap-list-row:nth-child(9) {
+  animation-delay: 0.9s;
+}
+
+.leap-list-row:nth-child(10) {
+  animation-delay: 1s;
+}
+
+.leap-list-row:nth-child(11) {
+  animation-delay: 1.1s;
+}
+
+.leap-list-row:nth-child(12) {
+  animation-delay: 1.2s;
+}
+
+.leap-list-row:nth-child(13) {
+  animation-delay: 1.3s;
+}
+
+.leap-list-row:nth-child(14) {
+  animation-delay: 1.4s;
+}
+
+.leap-list-row:nth-child(15) {
+  animation-delay: 1.5s;
+}
+
+.leap-list-row:nth-child(16) {
+  animation-delay: 1.6s;
+}
+
+.leap-list-row:nth-child(17) {
+  animation-delay: 1.7s;
+}
+
+.leap-list-row:nth-child(18) {
+  animation-delay: 1.8s;
+}
+
+.leap-list-row:nth-child(19) {
+  animation-delay: 1.9s;
+}
+
+.leap-list-row:nth-child(20) {
+  animation-delay: 2s;
+}
+
+.leap-list-row:nth-child(21) {
+  animation-delay: 2.1s;
+}
+
+.leap-list-row:nth-child(22) {
+  animation-delay: 2.2s;
+}
+
+.leap-list-row:nth-child(23) {
+  animation-delay: 2.3s;
+}
+
+.leap-list-row:nth-child(24) {
+  animation-delay: 2.4s;
+}
+
+.leap-list-row:nth-child(25) {
+  animation-delay: 2.5s;
+}
+
+.leap-list-row:nth-child(26) {
+  animation-delay: 2.6s;
+}
+
+.leap-list-row:nth-child(27) {
+  animation-delay: 2.7s;
+}
+
+.leap-list-row:nth-child(28) {
+  animation-delay: 2.8s;
+}
+
+.leap-list-row:nth-child(29) {
+  animation-delay: 2.9s;
+}
+
+.leap-list-row:nth-child(30) {
+  animation-delay: 3s;
+}
+
+.leap-list-row:nth-child(31) {
+  animation-delay: 3.1s;
+}
+
+.leap-list-row:nth-child(32) {
+  animation-delay: 3.2s;
+}
+
+.leap-list-row:nth-child(33) {
+  animation-delay: 3.3s;
+}
+
+.leap-list-row:nth-child(34) {
+  animation-delay: 3.4s;
+}
+
+.leap-list-row:nth-child(35) {
+  animation-delay: 3.5s;
+}
+
+.leap-list-row:nth-child(36) {
+  animation-delay: 3.6s;
+}
+
+.leap-list-row:nth-child(37) {
+  animation-delay: 3.7s;
+}
+
+.leap-list-row:nth-child(38) {
+  animation-delay: 3.8s;
+}
+
+.leap-list-row:nth-child(39) {
+  animation-delay: 3.9s;
+}
+
+.leap-list-row:nth-child(40) {
+  animation-delay: 4s;
+}
+
+.leap-list-row:nth-child(41) {
+  animation-delay: 4.1s;
+}
+
+.leap-list-row:nth-child(42) {
+  animation-delay: 4.2s;
+}
+
+.leap-list-row:nth-child(43) {
+  animation-delay: 4.3s;
+}
+
+.leap-list-row:nth-child(44) {
+  animation-delay: 4.4s;
+}
+
+.leap-list-row:nth-child(45) {
+  animation-delay: 4.5s;
+}
+
+.leap-list-row:nth-child(46) {
+  animation-delay: 4.6s;
+}
+
+.leap-list-row:nth-child(47) {
+  animation-delay: 4.7s;
+}
+
+.leap-list-row:nth-child(48) {
+  animation-delay: 4.8s;
+}
+
+.leap-list-row:nth-child(49) {
+  animation-delay: 4.9s;
+}
+
+.leap-list-row:nth-child(50) {
+  animation-delay: 5s;
+}
+
+.leap-menu {
+  position: absolute;
+  z-index: 999;
+  min-width: 256px;
+  margin-top: 4px;
+  padding: 24px;
+  background: #FFF;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+  -moz-box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+  -ms-box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+  -o-box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+  box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+}
+.leap-menu.hide {
+  display: none;
+}
+.leap-menu .leap-link {
+  display: block;
+  margin: -24px !important;
+  padding: 24px;
+  border-top: 1px solid #F3F4F5;
+  font-weight: 600;
+  color: #2E3033;
+}
+.leap-menu .leap-link:hover, .leap-menu .leap-link:focus {
+  color: #647286;
+}
+.leap-menu .leap-link:active {
+  color: #98A4B5;
+}
+.leap-menu .leap-link.disabled {
+  color: #98A4B5;
+}
+
+.leap-menu-handle {
+  font-weight: 700;
+  color: #2E3033;
+}
+.leap-menu-handle:hover, .leap-menu-handle:focus {
+  color: #647286;
+}
+.leap-menu-handle:active {
+  color: #98A4B5;
+}
+.leap-menu-handle.disabled {
+  color: #98A4B5;
+}
+.leap-menu-handle.open {
+  color: #98A4B5;
+}
+.leap-menu-handle.open:hover, .leap-menu-handle.open:focus {
+  color: #98A4B5;
+}
+.leap-menu-handle.open:active {
+  color: #98A4B5;
+}
+
+.leap-menu-item {
+  outline: none !important;
+}
+.leap-menu-item:first-child {
+  margin-top: -24px;
+}
+.leap-menu-item:first-child .leap-link {
+  border-top: none;
+}
+.leap-menu-item:last-child {
+  margin-bottom: -24px;
+}
+
+.leap-module {
+  background: #FFF;
+  -webkit-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -moz-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -ms-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -o-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  padding: 40px;
+}
+
+@media only screen and (max-width: 416px) {
+  .leap-module {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+    -moz-box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+    -ms-box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+    -o-box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+    box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+    padding: 16px;
+  }
+}
+.leap-profile .name {
+  background-image: url("assets/cheveron.png");
+  background-repeat: no-repeat;
+  background-position: center right;
+  padding-right: 12px;
+  max-width: 160px;
+}
+.leap-profile .name span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.leap-profile .user {
+  display: flex;
+  margin: -24px;
+  padding: 24px;
+  text-transform: none;
+  cursor: default;
+}
+.leap-profile .user .profile {
+  padding: 2px 0 0 16px;
+}
+.leap-profile .user .profile h5 {
+  max-width: 200px;
+  overflow: hidden;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #2E3033;
+}
+.leap-profile .user .profile p {
+  max-width: 200px;
+  overflow: hidden;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #647286;
+}
+
+@keyframes leap-keyframes-progress {
+  0% {
+    opacity: 0;
+    left: 0;
+    width: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    left: 0;
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.25;
+  }
+  100% {
+    left: 75%;
+    width: 75%;
+    opacity: 0;
+  }
+}
+.leap-progress {
+  height: 4px;
+  background: #D4D8DE;
+}
+.leap-progress.indefinite {
+  position: relative;
+  overflow: hidden;
+}
+.leap-progress.indefinite.hide {
+  display: none;
+}
+.leap-progress.indefinite .leap-progress-bar {
+  background: inherit;
+  width: inherit;
+}
+.leap-progress.indefinite .leap-progress-bar:before {
+  display: block;
+  position: absolute;
+  height: inherit;
+  content: '';
+  background: #2C95DD;
+  border-radius: 3px;
+  animation: leap-keyframes-progress 3s ease infinite;
+  animation-delay: 1.5s;
+}
+.leap-progress.indefinite .leap-progress-bar:after {
+  display: block;
+  position: absolute;
+  height: inherit;
+  content: '';
+  background: #2C95DD;
+  border-radius: 3px;
+  animation: leap-keyframes-progress 3s ease infinite;
+}
+.leap-progress.complete .leap-progress-bar {
+  background: #2C95DD;
+}
+.leap-progress .leap-progress-bar {
+  height: inherit;
+  background: #2C95DD;
+  border-radius: inherit;
+  transition: all 0.5s ease;
+}
+
+.leap-tooltip {
+  -webkit-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -moz-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -ms-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -o-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  position: absolute;
+  display: block;
+  z-index: 300;
+  top: -40px;
+  left: auto;
+  padding: 8px 15px;
+  background: #2E3033;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #FFF;
+  transition: opacity 0.5s ease;
+  transition-delay: 0.75s;
+}
+.leap-tooltip.hide {
+  display: block !important;
+  opacity: 0;
+  top: -5000px !important;
+  left: -5000px !important;
+  transition: none;
+  transition-delay: 0;
+}
+.leap-tooltip:after {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  margin: 0 0 0 -5px;
+  transform: rotate(45deg);
+  content: '';
+  background: #2E3033;
+  height: 10px;
+  width: 10px;
+}
+.leap-tooltip.bottom {
+  top: auto;
+  bottom: -40px;
+}
+.leap-tooltip.bottom:after {
+  top: -5px;
+  bottom: auto;
+}
+.leap-tooltip.left {
+  top: auto;
+}
+.leap-tooltip.left:after {
+  top: 50%;
+  bottom: auto;
+  left: auto;
+  right: -5px;
+  margin: -5px 0 0 0;
+}
+.leap-tooltip.right {
+  top: auto;
+}
+.leap-tooltip.right:after {
+  top: 50%;
+  bottom: auto;
+  left: -5px;
+  right: auto;
+  margin: -5px 0 0 0;
+}
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak,
+.ng-hide:not(.ng-hide-animate) {
+  display: none !important;
+}
+
+ng\:form {
+  display: block;
+}
+
+html,
+body {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #2E3033;
+}
+
+/*body {
+  @include bg-stripes(rgba(241,243,247,0.4));
+}*/
+.styleguide {
+  padding-top: 64px;
+  padding-bottom: 80px;
+  height: 100%;
+}
+.styleguide .header {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  padding: 16px 0;
+  background: rgba(46, 48, 51, 0.95);
+  -webkit-box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+  -moz-box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+  -ms-box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+  -o-box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+  box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+}
+.styleguide .header .breakpoint {
+  display: flex;
+}
+.styleguide .header .breakpoint h1 {
+  flex: 1;
+  color: #FFF;
+  text-transform: uppercase;
+}
+.styleguide .header .breakpoint menu > .leap-link {
+  color: #FFF;
+}
+.styleguide code {
+  display: block;
+  background: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: 'Roboto Slab', serif, monospace;
+  color: #98A4B5;
+}
+.styleguide code.variable {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #647286;
+}
+.styleguide .module {
+  padding-top: 24px;
+}
+.styleguide .module:last-child {
+  padding-bottom: 8px;
+}
+.styleguide .module h2 {
+  margin-bottom: 8px;
+}
+.styleguide .module h3 {
+  margin: 48px 0 8px;
+  color: #647286;
+}
+.styleguide .leap-card .content {
+  border-bottom: 1px solid #F3F4F5;
+}
+.styleguide .leap-card .code {
+  padding: 16px 24px;
+}
+
+@media only screen and (max-width: 768px) {
+  .breakpoint {
+    margin: 0 8px;
+  }
+}
+@media only screen and (max-width: 416px) {
+  .styleguide {
+    padding-bottom: 0;
+  }
+  .styleguide .leap-card {
+    margin-right: 0 !important;
+  }
+}
+.main-panel {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.main-panel .side-nav {
+  width: 300px;
+  height: 100%;
+  background: rgba(46, 48, 51, 0.95);
+}
+.main-panel .side-nav .side-nav-button {
+  cursor: pointer;
+  padding: 15px;
+  height: 30px;
+}
+.main-panel .side-nav .side-nav-button .side-nav-link {
+  padding: 15px;
+  color: #F3F4F5;
+}
+.main-panel .content-panel {
+  flex: 1;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Basic element and font defaults */
+sup,
+sub {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/*
+ * Addresses Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal;
+}
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Corrects inability to style clickable `input` types in iOS.
+ * 3. Improves usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+}
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+input[disabled] {
+  cursor: default;
+}
+
+/*
+ * 1. Addresses box sizing set to `content-box` in IE 8/9.
+ * 2. Removes excess padding in IE 8/9.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/*
+ * 1. Addresses `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Addresses `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/*
+ * Removes inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+ * Removes inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/*
+ * Removes the clear field "X" button in IE10+
+ */
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+}
+
+/*
+ * 1. Removes default vertical scrollbar in IE 8/9.
+ * 2. Improves readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/*
+ * Improves readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Font Reset */
+body {
+  margin: 0;
+  font: 13px/1.231 arial,helvetica,clean,sans-serif;
+}
+
+select,
+input,
+button,
+textarea {
+  font: 99% arial,helvetica,clean,sans-serif;
+}
+
+table {
+  font-size: inherit;
+  font: 100%;
+}
+
+pre,
+code,
+kbd,
+samp,
+tt {
+  font-family: monospace;
+  line-height: 100%;
+}
+
+@keyframes leap-keyframe-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+@keyframes leap-keyframe-fade-out {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/**
+ * Sets a drop shadow for the element. The passed value is the "depth" that the component
+ * should reside on. The higher the number, the further away from the background it will
+ * appear to be. There are three levels of depth:
+ * 1 = Slighly higher than the base level; closest to the base
+ * 2 = Medium level element
+ * 3 = Highest position reserved for floating elements
+ * @mixin box-shadow
+ * @param {Number} $depth
+ */
+/**
+ * Sets the border-radius property for an element
+ * @mixin border-radius
+ * @param {Mixed} $radius Radius to set; defaults to half of the grid-size defined
+ */
+/**
+ * Defines the font styling based off of the size passed. Optionally a color can be passed
+ * to render the font in a different color than it's inherited value.
+ * @mixin font
+ * @param {String} $size Font size name to mix in
+ * @param {String} $color (Optional) Color to display the text in
+ */
+/**
+ * Creates a cheveron
+ * @mixin cheveron
+ * @param {Color} $color Cheveron color
+ * @param {Size} $size Size of the cheveron
+ * @param {String} $direction Direction to display the cheveron; values: right, left, down, up
+ */
+/**
+ * Creates a bullet
+ * @mixin bullet
+ * @param {Color} $color Cheveron color
+ * @param {Size} $size Size of the cheveron
+ */
+/**
+ * Mixes in all of the properties to have a single background image
+ * @mixin bg
+ * @param {String} $asset 
+ * @return {String} 
+ */
+/**
+ * Creates a fill of color and image for the element.
+ * @mixin bg
+ * @param {String} $asset 
+ * @return {String} 
+ */
+/**
+ * Creates a background stripe pattern
+ * @mixin stripes
+ * @param {Color} $c1 Primary stripe color
+ * @param {Color} $c2 Secondary stripe color
+ * @param {Size} $size Stripe width
+ * @param {Degres} $angle Angule to display the stripes in. Pattern matches up at positive and negative values of: 0, 45, 90, 135 and 190
+ */
+/**
+ * This returns a pixel size that is a factor of the defined grid-size
+ * @function grid
+ * @param {Number} $factor (Optional) Factor to multiply the grid size by
+ * @return {Number} 
+ */
+/**
+ * Returns an asset path with $leap-asset-root as it's base directory
+ * @function asset
+ * @param {String} $asset 
+ * @return {String} 
+ */
+html,
+body {
+  height: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.breakpoint {
+  max-width: 1296px;
+  padding: 0 80px;
+  margin: 0 auto;
+}
+
+.leap-text-2x-small {
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 16px;
+}
+
+.leap-text-2x-small-caps {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.leap-text-1x-small {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.leap-text-1x-small-caps {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.leap-text-small {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.leap-text-medium {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.leap-text-medium-caps {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.leap-text-large {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.leap-text-1x-large {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.leap-text-2x-large {
+  font-weight: 300;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.leap-text-3x-large {
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+@media only screen and (max-width: 1296px) {
+  .breakpoint {
+    margin: 0 80px;
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 416px) {
+  .breakpoint {
+    margin: 0;
+  }
+}
+.leap-color-white {
+  background: #FFF;
+}
+
+.leap-color-gray04 {
+  background: #F3F4F5;
+}
+
+.leap-color-gray10 {
+  background: #D4D8DE;
+}
+
+.leap-color-gray40 {
+  background: #98A4B5;
+}
+
+.leap-color-gray40 {
+  background: #98A4B5;
+}
+
+.leap-color-gray60 {
+  background: #647286;
+}
+
+.leap-color-gray100 {
+  background: #2E3033;
+}
+
+.leap-color-black {
+  background: #2E3033;
+}
+
+.leap-color-primary {
+  background: #2C95DD;
+}
+
+.leap-color-primary-dark {
+  background: #104060;
+}
+
+.leap-color-primary-light {
+  background: #58abe4;
+}
+
+.leap-color-primary-faded {
+  background: #b0d7f2;
+}
+
+.leap-color-alert {
+  background: #E64C65;
+}
+
+.palettes .palette .colors {
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+.palettes .palette .colors .color {
+  flex: 1 0 33.333333%;
+  min-width: 33.333333%;
+  max-width: 33.333333%;
+}
+.palettes .palette .colors .color:nth-child(3n+3) .leap-card {
+  margin-right: 0;
+}
+.palettes .palette .colors .color .leap-card {
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+.palettes .palette .colors .color .leap-card .content {
+  height: 100px;
+}
+
+@media only screen and (max-width: 1296px) {
+  .styleguide .palettes .palette .colors .color {
+    flex: 1 0 50%;
+    min-width: 50%;
+    max-width: 50%;
+  }
+  .styleguide .palettes .palette .colors .color:nth-child(2n+2) .leap-card {
+    margin-right: 0;
+  }
+  .styleguide .palettes .palette .colors .color:nth-child(3n+3) .leap-card {
+    margin-right: 8px;
+  }
+}
+@media only screen and (max-width: 416px) {
+  .styleguide .palettes .palette .colors {
+    display: block;
+  }
+  .styleguide .palettes .palette .colors .color {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+.leap-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  background: #98A4B5;
+  border-radius: 4em;
+  cursor: default;
+}
+.leap-avatar p {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0;
+  line-height: 0.8em;
+  font-weight: 700;
+  font-size: 12px;
+  color: #FFF;
+}
+
+.leap-button {
+  display: inline-block;
+  min-width: 200px;
+  padding: 1.3em 3em;
+  background: #2C95DD;
+  border: 0;
+  border-radius: 2em;
+  outline: none;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  transition: all 0.25s ease;
+  text-transform: uppercase;
+  color: #FFF;
+  cursor: pointer;
+}
+.leap-button.expand {
+  display: block;
+  min-width: 100%;
+}
+.leap-button:hover {
+  background: #2C95DD;
+  color: #FFF;
+}
+.leap-button:active {
+  background: #b0d7f2;
+  color: #FFF;
+}
+.leap-button[disabled] {
+  background: #b0d7f2;
+  color: #FFF;
+}
+.leap-button.secondary {
+  background: transparent;
+  border: 1px solid #2C95DD;
+  color: #2C95DD;
+}
+.leap-button.secondary:hover, .leap-button.secondary:active {
+  background: transparent;
+}
+.leap-button.secondary:hover {
+  border-color: #104060;
+  color: #104060;
+}
+.leap-button.secondary:active {
+  border-color: #58abe4;
+  color: #58abe4;
+}
+.leap-button.secondary[disabled] {
+  background: transparent;
+  border-color: #b0d7f2;
+}
+.leap-button.secondary.fatal {
+  border-color: #E64C65;
+  color: #E64C65;
+}
+.leap-button.secondary.inverted {
+  border-color: #FFF;
+  color: #FFF;
+}
+
+.leap-card {
+  overflow: hidden;
+  background: #FFF;
+  -webkit-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -moz-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -ms-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -o-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.leap-checkbox {
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+}
+.leap-checkbox label {
+  display: inline-block;
+  margin: 0 40px 2px;
+  padding: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2E3033;
+}
+.leap-checkbox input {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  margin: 0;
+}
+.leap-checkbox input + label:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  content: '';
+  background: #FFF;
+  border: 1px solid #D4D8DE;
+  cursor: pointer;
+}
+.leap-checkbox input:checked + label:after {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  display: block;
+  transform: rotate(45deg);
+  content: '';
+  height: 10px;
+  width: 4px;
+  border-right: 2px solid #2C95DD;
+  border-bottom: 2px solid #2C95DD;
+  cursor: pointer;
+}
+.leap-checkbox.right {
+  text-right: right;
+}
+.leap-checkbox.right input + label:before {
+  left: auto;
+  right: 0;
+}
+.leap-checkbox.right input:checked + label:after {
+  left: auto;
+  right: 0;
+}
+
+@keyframes leap-keyframe-fab-open {
+  0% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(65deg);
+  }
+  100% {
+    transform: rotate(45deg);
+  }
+}
+@keyframes leap-keyframe-fab-close {
+  0% {
+    transform: rotate(45deg);
+  }
+  75% {
+    transform: rotate(-25deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes leap-keyframe-fab-show {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes leap-keyframe-fab-hide {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+}
+.leap-fab {
+  position: relative;
+  display: block;
+  margin-bottom: 24px;
+  outline: none;
+}
+
+.leap-fab-primary {
+  animation: leap-keyframe-fab-show 0.25s 1 forwards;
+}
+.leap-fab-primary.hide {
+  display: block;
+  animation: leap-keyframe-fab-hide 0.25s 1 forwards;
+}
+
+.leap-fab-button {
+  -webkit-box-shadow: 3px 3px 9px rgba(46, 48, 51, 0.35);
+  -moz-box-shadow: 3px 3px 9px rgba(46, 48, 51, 0.35);
+  -ms-box-shadow: 3px 3px 9px rgba(46, 48, 51, 0.35);
+  -o-box-shadow: 3px 3px 9px rgba(46, 48, 51, 0.35);
+  box-shadow: 3px 3px 9px rgba(46, 48, 51, 0.35);
+  position: relative;
+  z-index: 2;
+  min-width: auto;
+  height: 56px;
+  width: 56px;
+  padding: 0;
+  background: #2C95DD;
+  border: 0;
+  border-radius: 5em;
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1em;
+  letter-spacing: normal;
+  color: #FFF;
+}
+
+.leap-fab-option {
+  z-index: 1;
+  position: relative;
+  display: none;
+  opacity: 0;
+  top: 0;
+  background: #FFF;
+  padding: 1em;
+  color: #2C95DD;
+  transition: top 0.5s ease, opacity 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
+}
+.leap-fab-option:hover {
+  background: #2C95DD;
+  color: #FFF;
+}
+.leap-fab-option:active {
+  background: #b0d7f2;
+  color: #FFF;
+}
+
+.leap-fab-label {
+  position: absolute;
+  right: 60px;
+  overflow: hidden;
+  opacity: 0;
+  max-width: 0;
+  margin-top: 11px;
+  margin-right: 5px;
+  background: #2C95DD;
+  border-radius: 3em;
+  color: #FFF;
+  transition: max-width 0.5s ease 0s,opacity 0.15s ease 0s;
+}
+.leap-fab-label p {
+  opacity: 0;
+  margin: 0;
+  padding: 7px 18px;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: opacity 0.25s ease 0s;
+}
+.leap-fab-label.expanded {
+  max-width: 500px;
+  opacity: 0.9;
+}
+.leap-fab-label.expanded p {
+  opacity: 0.9;
+}
+
+.leap-fab-group {
+  position: relative;
+  display: inline-block;
+}
+.leap-fab-group.initial .leap-fab-option, .leap-fab-group.opened .leap-fab-option, .leap-fab-group.closing .leap-fab-option {
+  display: block;
+}
+.leap-fab-group.initial .leap-fab:hover .leap-fab-label, .leap-fab-group.closing .leap-fab:hover .leap-fab-label {
+  opacity: 0 !important;
+}
+.leap-fab-group.initial .leap-fab-option:hover, .leap-fab-group.closing .leap-fab-option:hover {
+  background: inherit;
+  color: inherit;
+}
+.leap-fab-group.initial .leap-fab-option {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  transform: scale(1.5);
+}
+.leap-fab-group.opened .leap-fab-primary .leap-fab-inner {
+  animation: leap-keyframe-fab-open 0.5s 1 forwards;
+}
+.leap-fab-group.opened .leap-fab-option {
+  opacity: 0.9;
+  margin-top: 5px;
+  transform: scale(1);
+}
+.leap-fab-group.opened .leap-fab:nth-child(1) .leap-fab-option {
+  transition-delay: 0.05s;
+}
+.leap-fab-group.opened .leap-fab:nth-child(2) .leap-fab-option {
+  transition-delay: 0.1s;
+}
+.leap-fab-group.opened .leap-fab:nth-child(3) .leap-fab-option {
+  transition-delay: 0.15s;
+}
+.leap-fab-group.opened .leap-fab:nth-child(4) .leap-fab-option {
+  transition-delay: 0.2s;
+}
+.leap-fab-group.opened .leap-fab:nth-child(5) .leap-fab-option {
+  transition-delay: 0.25s;
+}
+.leap-fab-group.closing .leap-fab-primary .leap-fab-inner {
+  animation: leap-keyframe-fab-close 0.5s 1;
+}
+.leap-fab-group.closing .leap-fab-option {
+  opacity: 0;
+  transform: scale(0.1);
+}
+.leap-fab-group.closing .leap-fab:nth-child(1) .leap-fab-option {
+  transition-delay: 0.2s;
+}
+.leap-fab-group.closing .leap-fab:nth-child(2) .leap-fab-option {
+  transition-delay: 0.15s;
+}
+.leap-fab-group.closing .leap-fab:nth-child(3) .leap-fab-option {
+  transition-delay: 0.1s;
+}
+.leap-fab-group.closing .leap-fab:nth-child(4) .leap-fab-option {
+  transition-delay: 0.05s;
+}
+.leap-fab-group.closing .leap-fab:nth-child(5) .leap-fab-option {
+  transition-delay: 0s;
+}
+
+input,
+select,
+textarea {
+  outline: none;
+}
+input.leap-error,
+select.leap-error,
+textarea.leap-error {
+  border-color: #E64C65 !important;
+  background: #FFF !important;
+  color: #98A4B5 !important;
+}
+
+input:-moz-placeholder,
+input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #98A4B5 !important;
+  opacity: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+input::-webkit-input-placeholder,
+input:-ms-input-placeholder,
+input:placeholder-shown {
+  /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  color: #98A4B5 !important;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Disable number spinner */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  width: 100%;
+}
+
+input[type=text],
+input[type=password] {
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+  -moz-box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+  -ms-box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+  -o-box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+  box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+  outline: none;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 14px;
+  background: #FFF;
+  border: 1px solid #D4D8DE;
+  border-radius: 4px;
+  outline: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2E3033;
+  resize: none;
+  transition: border-color 0.5s ease;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+input:focus,
+textarea:focus {
+  border-color: #647286;
+  color: #2E3033 !important;
+}
+input[disabled],
+textarea[disabled] {
+  background: #F3F4F5;
+  color: #98A4B5;
+}
+
+textarea {
+  min-height: 6em;
+}
+
+label {
+  display: block;
+  margin: 0;
+  padding-bottom: 8px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #647286;
+}
+label em {
+  padding-left: 4px;
+}
+label em:before {
+  content: "(";
+}
+label em:after {
+  content: ")";
+}
+
+.leap-fieldset {
+  margin-bottom: 16px;
+}
+.leap-fieldset .leap-field-errors {
+  min-height: 1.75em;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  padding-top: 0.25em;
+}
+.leap-fieldset .leap-field-errors li,
+.leap-fieldset .leap-field-errors .leap-field-error {
+  margin: 0;
+  padding: 0;
+  line-height: 1em;
+}
+
+.leap-field-errors {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.leap-field-errors li,
+.leap-field-errors .leap-field-error {
+  padding: 0;
+  padding-top: 2px;
+  font-size: 12px;
+  color: #E64C65;
+}
+
+.labels {
+  display: flex;
+}
+.labels label {
+  padding: 0 10px 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #2C95DD;
+  transition: color 0.25s ease;
+}
+a:hover, a:focus {
+  color: #104060;
+  outline: none;
+}
+a:hover .leap-icon, a:focus .leap-icon {
+  text-decoration: none;
+  color: inherit;
+}
+a:active {
+  color: #b0d7f2;
+}
+a:active .leap-icon {
+  color: inherit;
+}
+a:disabled, a.disabled {
+  color: #b0d7f2;
+  cursor: default;
+}
+a:disabled .leap-icon, a.disabled .leap-icon {
+  color: inherit;
+}
+a .leap-icon {
+  display: inline-block;
+  margin-left: 20px;
+  font-size: inherit;
+  color: inherit;
+}
+
+.leap-link {
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+.leap-link:hover, .leap-link:focus {
+  text-decoration: none;
+}
+.leap-link.gray {
+  color: #647286;
+}
+.leap-link.gray:hover, .leap-link.gray:focus {
+  color: #2E3033;
+}
+.leap-link.gray:active {
+  color: #98A4B5;
+}
+.leap-link.gray:disabled, .leap-link.gray.disabled {
+  color: #98A4B5;
+}
+
+@keyframes leap-keyframe-list-row-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.leap-list-row,
+.leap-list-header,
+.leap-list-footer {
+  display: flex;
+  padding: 0 4px;
+}
+
+.leap-list-col {
+  flex: 1;
+  padding: 24px 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2E3033;
+}
+
+.leap-list-header {
+  border-bottom: 1px solid #F3F4F5;
+}
+.leap-list-header .leap-list-col {
+  padding: 24px 8px 8px;
+  color: #2E3033;
+}
+.leap-list-header .leap-link {
+  margin: 0;
+  color: #2E3033;
+}
+
+.leap-list-footer {
+  border-top: 1px solid #F3F4F5;
+}
+
+.leap-list-row {
+  animation: leap-keyframe-list-row-fade-in 0.25s 1 forwards;
+  opacity: 0;
+  border-bottom: 1px solid #F3F4F5;
+  transition: all 0.25s ease;
+}
+.leap-list-row:last-child {
+  border-bottom: none;
+}
+
+.leap-list-row:hover {
+  background: #F3F4F5;
+}
+
+.leap-list-row:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.leap-list-row:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.leap-list-row:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.leap-list-row:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.leap-list-row:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.leap-list-row:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.leap-list-row:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+.leap-list-row:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+.leap-list-row:nth-child(9) {
+  animation-delay: 0.9s;
+}
+
+.leap-list-row:nth-child(10) {
+  animation-delay: 1s;
+}
+
+.leap-list-row:nth-child(11) {
+  animation-delay: 1.1s;
+}
+
+.leap-list-row:nth-child(12) {
+  animation-delay: 1.2s;
+}
+
+.leap-list-row:nth-child(13) {
+  animation-delay: 1.3s;
+}
+
+.leap-list-row:nth-child(14) {
+  animation-delay: 1.4s;
+}
+
+.leap-list-row:nth-child(15) {
+  animation-delay: 1.5s;
+}
+
+.leap-list-row:nth-child(16) {
+  animation-delay: 1.6s;
+}
+
+.leap-list-row:nth-child(17) {
+  animation-delay: 1.7s;
+}
+
+.leap-list-row:nth-child(18) {
+  animation-delay: 1.8s;
+}
+
+.leap-list-row:nth-child(19) {
+  animation-delay: 1.9s;
+}
+
+.leap-list-row:nth-child(20) {
+  animation-delay: 2s;
+}
+
+.leap-list-row:nth-child(21) {
+  animation-delay: 2.1s;
+}
+
+.leap-list-row:nth-child(22) {
+  animation-delay: 2.2s;
+}
+
+.leap-list-row:nth-child(23) {
+  animation-delay: 2.3s;
+}
+
+.leap-list-row:nth-child(24) {
+  animation-delay: 2.4s;
+}
+
+.leap-list-row:nth-child(25) {
+  animation-delay: 2.5s;
+}
+
+.leap-list-row:nth-child(26) {
+  animation-delay: 2.6s;
+}
+
+.leap-list-row:nth-child(27) {
+  animation-delay: 2.7s;
+}
+
+.leap-list-row:nth-child(28) {
+  animation-delay: 2.8s;
+}
+
+.leap-list-row:nth-child(29) {
+  animation-delay: 2.9s;
+}
+
+.leap-list-row:nth-child(30) {
+  animation-delay: 3s;
+}
+
+.leap-list-row:nth-child(31) {
+  animation-delay: 3.1s;
+}
+
+.leap-list-row:nth-child(32) {
+  animation-delay: 3.2s;
+}
+
+.leap-list-row:nth-child(33) {
+  animation-delay: 3.3s;
+}
+
+.leap-list-row:nth-child(34) {
+  animation-delay: 3.4s;
+}
+
+.leap-list-row:nth-child(35) {
+  animation-delay: 3.5s;
+}
+
+.leap-list-row:nth-child(36) {
+  animation-delay: 3.6s;
+}
+
+.leap-list-row:nth-child(37) {
+  animation-delay: 3.7s;
+}
+
+.leap-list-row:nth-child(38) {
+  animation-delay: 3.8s;
+}
+
+.leap-list-row:nth-child(39) {
+  animation-delay: 3.9s;
+}
+
+.leap-list-row:nth-child(40) {
+  animation-delay: 4s;
+}
+
+.leap-list-row:nth-child(41) {
+  animation-delay: 4.1s;
+}
+
+.leap-list-row:nth-child(42) {
+  animation-delay: 4.2s;
+}
+
+.leap-list-row:nth-child(43) {
+  animation-delay: 4.3s;
+}
+
+.leap-list-row:nth-child(44) {
+  animation-delay: 4.4s;
+}
+
+.leap-list-row:nth-child(45) {
+  animation-delay: 4.5s;
+}
+
+.leap-list-row:nth-child(46) {
+  animation-delay: 4.6s;
+}
+
+.leap-list-row:nth-child(47) {
+  animation-delay: 4.7s;
+}
+
+.leap-list-row:nth-child(48) {
+  animation-delay: 4.8s;
+}
+
+.leap-list-row:nth-child(49) {
+  animation-delay: 4.9s;
+}
+
+.leap-list-row:nth-child(50) {
+  animation-delay: 5s;
+}
+
+.leap-menu {
+  position: absolute;
+  z-index: 999;
+  min-width: 256px;
+  margin-top: 4px;
+  padding: 24px;
+  background: #FFF;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+  -moz-box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+  -ms-box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+  -o-box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+  box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+}
+.leap-menu.hide {
+  display: none;
+}
+.leap-menu .leap-link {
+  display: block;
+  margin: -24px !important;
+  padding: 24px;
+  border-top: 1px solid #F3F4F5;
+  font-weight: 600;
+  color: #2E3033;
+}
+.leap-menu .leap-link:hover, .leap-menu .leap-link:focus {
+  color: #647286;
+}
+.leap-menu .leap-link:active {
+  color: #98A4B5;
+}
+.leap-menu .leap-link.disabled {
+  color: #98A4B5;
+}
+
+.leap-menu-handle {
+  font-weight: 700;
+  color: #2E3033;
+}
+.leap-menu-handle:hover, .leap-menu-handle:focus {
+  color: #647286;
+}
+.leap-menu-handle:active {
+  color: #98A4B5;
+}
+.leap-menu-handle.disabled {
+  color: #98A4B5;
+}
+.leap-menu-handle.open {
+  color: #98A4B5;
+}
+.leap-menu-handle.open:hover, .leap-menu-handle.open:focus {
+  color: #98A4B5;
+}
+.leap-menu-handle.open:active {
+  color: #98A4B5;
+}
+
+.leap-menu-item {
+  outline: none !important;
+}
+.leap-menu-item:first-child {
+  margin-top: -24px;
+}
+.leap-menu-item:first-child .leap-link {
+  border-top: none;
+}
+.leap-menu-item:last-child {
+  margin-bottom: -24px;
+}
+
+.leap-module {
+  background: #FFF;
+  -webkit-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -moz-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -ms-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -o-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  padding: 40px;
+}
+
+@media only screen and (max-width: 416px) {
+  .leap-module {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+    -moz-box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+    -ms-box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+    -o-box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+    box-shadow: 0px 0px 0px rgba(46, 48, 51, 0.2);
+    padding: 16px;
+  }
+}
+.leap-profile .name {
+  background-image: url("assets/cheveron.png");
+  background-repeat: no-repeat;
+  background-position: center right;
+  padding-right: 12px;
+  max-width: 160px;
+}
+.leap-profile .name span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.leap-profile .user {
+  display: flex;
+  margin: -24px;
+  padding: 24px;
+  text-transform: none;
+  cursor: default;
+}
+.leap-profile .user .profile {
+  padding: 2px 0 0 16px;
+}
+.leap-profile .user .profile h5 {
+  max-width: 200px;
+  overflow: hidden;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #2E3033;
+}
+.leap-profile .user .profile p {
+  max-width: 200px;
+  overflow: hidden;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #647286;
+}
+
+@keyframes leap-keyframes-progress {
+  0% {
+    opacity: 0;
+    left: 0;
+    width: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    left: 0;
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.25;
+  }
+  100% {
+    left: 75%;
+    width: 75%;
+    opacity: 0;
+  }
+}
+.leap-progress {
+  height: 4px;
+  background: #D4D8DE;
+}
+.leap-progress.indefinite {
+  position: relative;
+  overflow: hidden;
+}
+.leap-progress.indefinite.hide {
+  display: none;
+}
+.leap-progress.indefinite .leap-progress-bar {
+  background: inherit;
+  width: inherit;
+}
+.leap-progress.indefinite .leap-progress-bar:before {
+  display: block;
+  position: absolute;
+  height: inherit;
+  content: '';
+  background: #2C95DD;
+  border-radius: 3px;
+  animation: leap-keyframes-progress 3s ease infinite;
+  animation-delay: 1.5s;
+}
+.leap-progress.indefinite .leap-progress-bar:after {
+  display: block;
+  position: absolute;
+  height: inherit;
+  content: '';
+  background: #2C95DD;
+  border-radius: 3px;
+  animation: leap-keyframes-progress 3s ease infinite;
+}
+.leap-progress.complete .leap-progress-bar {
+  background: #2C95DD;
+}
+.leap-progress .leap-progress-bar {
+  height: inherit;
+  background: #2C95DD;
+  border-radius: inherit;
+  transition: all 0.5s ease;
+}
+
+.leap-tooltip {
+  -webkit-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -moz-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -ms-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  -o-box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  box-shadow: 1px 1px 3px rgba(46, 48, 51, 0.25);
+  position: absolute;
+  display: block;
+  z-index: 300;
+  top: -40px;
+  left: auto;
+  padding: 8px 15px;
+  background: #2E3033;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #FFF;
+  transition: opacity 0.5s ease;
+  transition-delay: 0.75s;
+}
+.leap-tooltip.hide {
+  display: block !important;
+  opacity: 0;
+  top: -5000px !important;
+  left: -5000px !important;
+  transition: none;
+  transition-delay: 0;
+}
+.leap-tooltip:after {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  margin: 0 0 0 -5px;
+  transform: rotate(45deg);
+  content: '';
+  background: #2E3033;
+  height: 10px;
+  width: 10px;
+}
+.leap-tooltip.bottom {
+  top: auto;
+  bottom: -40px;
+}
+.leap-tooltip.bottom:after {
+  top: -5px;
+  bottom: auto;
+}
+.leap-tooltip.left {
+  top: auto;
+}
+.leap-tooltip.left:after {
+  top: 50%;
+  bottom: auto;
+  left: auto;
+  right: -5px;
+  margin: -5px 0 0 0;
+}
+.leap-tooltip.right {
+  top: auto;
+}
+.leap-tooltip.right:after {
+  top: 50%;
+  bottom: auto;
+  left: -5px;
+  right: auto;
+  margin: -5px 0 0 0;
+}
+
+.leap-user {
+  display: flex;
+}
+.leap-user .details {
+  flex: 1;
+  margin-left: 16px;
+}
+.leap-user .details h5 {
+  padding-top: 2px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #2E3033;
+}
+.leap-user .details p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #647286;
+}
+
+.leap-users {
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.leap-users .user {
+  margin-left: 4px;
+  cursor: default;
+}
+.leap-users .user-add {
+  margin-left: 4px;
+  display: inline-block;
+}
+.leap-users .user-add .leap-avatar {
+  cursor: pointer;
+}
+.leap-users .user-add .leap-avatar p {
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFF;
+  font-weight: 700;
+}
+
+.fab .leap-fab-primary .leap-fab-inner {
+  color: #FFF;
+}
+
+.list {
+  padding: 24px;
+}
+
+.wrapper {
+  display: flex;
+  color: #333333;
+  font-family: OpenSans-Light;
+}
+
+.breakpoint {
+  flex: 1;
+  max-width: 70em;
+  margin: auto;
+}
+
+.leap-type-style {
+  display: flex;
+}
+
+.leap-type-style-section {
+  flex: 1;
+  flex-wrap: nowrap;
+  padding: 16px 0;
+}
+
+.data, .type-style-variable, .type-style-properties {
+  margin: auto;
+  font-family: Roboto-Slab;
+  font-size: 14px;
+  letter-spacing: 0.02px;
+  text-transform: none;
+  font-weight: 300;
+}
+
+.type-style-variable {
+  text-align: right;
+}
+
+html,
+body {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: #2E3033;
+}
+
+/*
+body {
+  @include bg-stripes(rgba(241,243,247,0.4));
+}
+*/
+.styleguide {
+  padding-top: 64px;
+  padding-bottom: 80px;
+}
+.styleguide .header {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  padding: 16px 0;
+  background: rgba(46, 48, 51, 0.95);
+  -webkit-box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+  -moz-box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+  -ms-box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+  -o-box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+  box-shadow: 2px 2px 6px rgba(46, 48, 51, 0.3);
+}
+.styleguide .header .breakpoint {
+  display: flex;
+}
+.styleguide .header .breakpoint h1 {
+  flex: 1;
+  color: #FFF;
+  text-transform: uppercase;
+}
+.styleguide .header .breakpoint menu > .leap-link {
+  color: #FFF;
+}
+.styleguide code {
+  display: block;
+  background: none;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  font-family: 'Roboto Slab', serif, monospace;
+  color: #98A4B5;
+}
+.styleguide code.variable {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #647286;
+}
+.styleguide .module {
+  padding-top: 24px;
+}
+.styleguide .module:last-child {
+  padding-bottom: 8px;
+}
+.styleguide .module h2 {
+  margin-bottom: 8px;
+}
+.styleguide .module h3 {
+  margin: 48px 0 8px;
+  color: #647286;
+}
+.styleguide .leap-card .content {
+  border-bottom: 1px solid #F3F4F5;
+}
+.styleguide .leap-card .code {
+  padding: 16px 24px;
+}
+
+.mock-screen {
+  overflow: hidden;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+.mock-screen header {
+  position: relative;
+  padding: 32px;
+  background: #D4D8DE;
+  margin-bottom: 1px;
+}
+.mock-screen header h1 {
+  color: #FFF;
+}
+.mock-screen header .leap-fab-group {
+  position: absolute;
+  z-index: 1;
+  top: 60px;
+  right: 48px;
+}
+.mock-screen .content {
+  display: flex;
+  height: 400px;
+}
+.mock-screen .content section {
+  flex: 1;
+  max-width: 400px;
+  background: #D4D8DE;
+  margin-right: 1px;
+}
+.mock-screen .content aside {
+  flex: 1;
+  background: #D4D8DE;
+}
+
+@media only screen and (max-width: 768px) {
+  .breakpoint {
+    margin: 0 8px;
+  }
+}
+@media only screen and (max-width: 416px) {
+  .styleguide {
+    padding-bottom: 0;
+  }
+  .styleguide .leap-card {
+    margin-right: 0 !important;
+  }
+}

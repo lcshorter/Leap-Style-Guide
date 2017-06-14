@@ -1,0 +1,64 @@
+$leap-list-border:$leap-color-gray04 !default;
+$leap-list-col-color:$leap-color-gray100 !default;
+
+$leap-list-row-background--hover:$leap-color-gray04 !default;
+
+@keyframes leap-keyframe-list-row-fade-in {
+  0% { opacity:0; }
+  100% { opacity:1; }
+}
+
+.leap-list-row,
+.leap-list-header,
+.leap-list-footer {
+  display:flex;
+  padding:0 grid(0.5);
+}
+
+.leap-list-col {
+  flex:1;
+  padding:grid(3) grid();
+  @include font(medium, $leap-list-col-color);
+}
+
+
+.leap-list-header {
+  border-bottom:1px solid $leap-list-border;
+
+  .leap-list-col {
+    padding:grid(3) grid() grid();
+    @include font(x-small, $leap-list-col-color);
+  }
+
+  .leap-link {
+    margin:0;
+    @include font(x-small, $leap-list-col-color);
+  }
+}
+
+
+.leap-list-footer {
+  border-top:1px solid $leap-list-border;
+}
+
+.leap-list-row {
+  animation:leap-keyframe-list-row-fade-in 0.25s 1 forwards;
+  opacity:0;
+  border-bottom:1px solid $leap-list-border;
+  transition:all 0.25s ease;
+
+  &:last-child {
+    border-bottom:none;
+  }
+}
+
+.leap-list-row:hover {
+  background:$leap-list-row-background--hover;
+}
+
+
+@for $i from 1 through 50 {
+  .leap-list-row:nth-child(#{$i}){
+    animation-delay:$i * 0.1s;
+  }
+}

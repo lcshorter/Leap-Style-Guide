@@ -1,0 +1,73 @@
+$leap-checkbox-label: $leap-color-gray100 !default;
+
+.leap-checkbox {
+  position:relative;
+  overflow:hidden;
+  text-align:left;
+  
+  label {
+    display:inline-block;
+    margin:0 grid(5) grid(0.25);
+    padding:0 ;
+    @include font(medium, $leap-checkbox-label);
+  }
+
+  input {
+    position:absolute;
+    top:-1000px;
+    left:-1000px;
+    margin:0;
+
+    & + label {
+      &:before {
+        position:absolute;
+        display:block;
+        top:0;
+        left:0;
+        height:grid(3);
+        width:grid(3);
+        @include border-radius();
+        content:'';
+        background:$leap-color-white;
+        border:1px solid $leap-color-gray10;
+        cursor:pointer;
+      }
+    }
+
+    &:checked + label {
+      &:after {
+        position:absolute;
+        top:grid(0.75);
+        left:grid(1.25);
+        display:block;
+        transform:rotate(45deg);
+        content:'';
+        height:grid(1.25);
+        width:grid(0.5);
+        border-right:2px solid $leap-color-primary;
+        border-bottom:2px solid $leap-color-primary;
+        cursor:pointer;
+      }
+    }
+  }
+
+  &.right {
+    text-right:right;
+
+    input {
+      & + label {
+        &:before {
+          left:auto;
+          right:0;
+        }
+      }
+
+      &:checked + label {
+        &:after {
+          left:auto;
+          right:0;
+        }
+      }
+    }
+  }
+}

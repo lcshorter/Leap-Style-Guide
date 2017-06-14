@@ -1,0 +1,10 @@
+<div class="leap-users">
+  <leap-link class="user" ng-repeat="user in users">
+    <leap-avatar user="user"></leap-avatar>
+    <leap-tooltip>{{ user.first_name }} {{ user.last_name }}</leap-tooltip>
+  </leap-link>
+  
+  <leap-link class="user-add" ng-click="adduser();" ng-show="!readonly || !users.length">
+    <leap-avatar value="+"></leap-avatar>
+  </leap-link>
+</div>

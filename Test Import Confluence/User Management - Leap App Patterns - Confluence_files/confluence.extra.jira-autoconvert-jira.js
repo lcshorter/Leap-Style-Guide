@@ -1,0 +1,11 @@
+WRMCB=function(e){var c=console;if(c&&c.log&&c.error){c.log('Error running batched script.');c.error(e);}}
+;
+try {
+/* module-key = 'confluence.extra.jira:autoconvert-jira', location = 'editor-plugins/jira-paste-link.js' */
+define("confluence/jim/editor-plugins/jira-paste-link",["ajs",],function(b){var a={issueKeyOnlyRegEx:/\/(i#)?browse\/([\x00-\x19\x21-\x22\x24\x27-\x3E\x40-\x7F]+-[0-9]+$)/,singleTicketXMLEx:/\/jira\.issueviews:issue-xml\/([\x00-\x19\x21-\x22\x24\x27-\x3E\x40-\x7F]+-[0-9]+)\//,issueKeyWithinRegex:/\/(i#)?browse\/([\x00-\x19\x21-\x22\x24\x27-\x3E\x40-\x7F]+-[0-9]+)(?:\?|#)/,jqlRegEx:/jqlQuery\=([^&]+)/,jqlRegExAlternateFormat:/jql\=([^&]+)/,_getMatchedServerFromLink:function(d,j){var h=null;for(var f in j){if(j.hasOwnProperty(f)){var g=j[f];var c=g.url;var e=g.url[g.url.length-1];if(e!=="/"){c+="/"}if(d.indexOf(c)===0){h=g;break}}}return h},pasteHandler:function(g,h,k){var m=b.Editor.JiraConnector.servers;if(!m){k();return null}var l=b.Editor.JiraAnalytics;var f={};var n=a._getMatchedServerFromLink(g.source,m);var i=null;if(n){var d=a.jqlRegEx.exec(g.source)||a.jqlRegExAlternateFormat.exec(g.source);var c=b.JQLHelper.isFilterUrl(g.source);var j=a.issueKeyOnlyRegEx.exec(g.source)||a.issueKeyWithinRegex.exec(g.source);if(j){j=j[2];if(l){f.type=l.linkTypes.jql}}else{j=a.singleTicketXMLEx.exec(g.source);if(j){j=j[1];if(l){f.type=l.linkTypes.xml}}}if(d){f.is_single_issue=false;f.type=b.JQLHelper.checkQueryType(g.source);i={name:"jira",params:{server:n.name,serverId:n.id,jqlQuery:decodeURIComponent(d[1].replace(/\+/g,"%20"))}}}else{if(c){var e=g.source;f.is_single_issue=false;f.type=b.JQLHelper.checkQueryType(e);i={name:"jira",params:{server:n.name,serverId:n.id,jqlQuery:b.JQLHelper.getFilterFromFilterUrl(e)}}}else{if(j){f.is_single_issue=true;i={name:"jira",params:{server:n.name,serverId:n.id,key:j}}}}}}if(i){window.tinymce.plugins.Autoconvert.convertMacroToDom(i,k,k);if(l){l.triggerPasteEvent(f)}}else{k()}}};return a});
+}catch(e){WRMCB(e)};
+;
+try {
+/* module-key = 'confluence.extra.jira:autoconvert-jira', location = 'editor-plugins/init.js' */
+require(["ajs","confluence/jim/editor-plugins/jira-paste-link"],function(b,a){b.bind("init.rte",function(){window.tinymce.plugins.Autoconvert.autoConvert.addHandler(a.pasteHandler)})});
+}catch(e){WRMCB(e)};

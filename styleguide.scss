@@ -1,0 +1,171 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
+
+@import 'component/leap';
+@import 'component/avatar/avatar';
+@import 'component/button/button';
+@import 'component/card/card';
+@import 'component/fab/fab';
+@import 'component/form/form';
+@import 'component/link/link';
+@import 'component/list/list';
+@import 'component/menu/menu';
+@import 'component/module/module';
+@import 'component/profile/profile';
+@import 'component/progress/progress';
+@import 'component/tooltip/tooltip';
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak,
+.ng-hide:not(.ng-hide-animate) {
+  display:none !important;
+}
+
+ng\:form {
+  display:block;
+}
+
+
+
+html,
+body {
+  @include font(small, $leap-color-gray100);
+}
+
+/*body {
+  @include bg-stripes(rgba(241,243,247,0.4));
+}*/
+
+.styleguide {
+  padding-top:grid(8);
+  padding-bottom:$leap-breakpoint-space;
+  height: 100%;
+  .header {
+    position:fixed;
+    z-index:2;
+    top:0;
+    width:100%;
+    padding:grid(2) 0;
+    background:rgba(46,48,51,0.95);
+    @include box-shadow(2);
+
+    .breakpoint {
+      display:flex;
+    
+      h1 {
+        flex:1;
+        color:$leap-color-white;
+        text-transform:uppercase;
+      }
+
+      menu {
+        >.leap-link {
+          color:$leap-color-white;
+        }
+      }
+    }
+  }
+
+  code {
+    display:block;
+    background:none;
+    @include font(small);
+    font-family:'Roboto Slab', serif, monospace;
+    color:$leap-color-gray40;
+
+    &.variable {
+      @include font(medium);
+      color:$leap-color-gray60;
+    }
+  }
+
+  .module {
+    padding-top:grid(3);
+
+    &:last-child {
+      padding-bottom:grid();
+    }
+
+    h2 {
+      @include font(xx-large);
+      margin-bottom:grid();
+    }
+
+    h3 {
+      margin:grid(6) 0 grid();
+      @include font(x-small, $leap-color-gray60);
+    }
+  }
+
+  .leap-card {
+    .content {
+      border-bottom:1px solid $leap-color-gray04;
+    }
+
+    .code {
+      padding:grid(2) grid(3);
+    }
+  }
+}
+
+
+
+
+
+@media #{$leap-breakpoint-rule-medium} {
+  .breakpoint {
+    margin:0 grid();
+  }
+}
+
+
+
+
+@media #{$leap-breakpoint-rule-small} {
+  .styleguide {
+    padding-bottom:0;
+
+    .leap-card {
+      margin-right:0 !important;
+    }
+  }
+}
+
+
+.main-panel{
+  height: 100%; width:100%;
+  display: flex;
+  flex-direction: row;
+  .side-nav{
+    width:300px;
+    height: 100%;
+    background: rgba(46, 48, 51, 0.95);
+    .side-nav-button{
+      cursor: pointer;
+      padding: 15px;
+      height: 30px;
+      .side-nav-link{
+        padding: 15px;
+        color: #F3F4F5;
+
+      }
+    }
+  }
+  .content-panel{
+    flex: 1;
+    height: 100%;
+    overflow-y: scroll;
+  }
+
+
+}
+
+
+
+//@import 'component/module/module';
+@import 'stage/stage';

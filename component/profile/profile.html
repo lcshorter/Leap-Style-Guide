@@ -1,0 +1,25 @@
+<div class="leap-profile">
+  <leap-link class="name">
+    <span>{{ first_name }} {{ last_name }}</span>
+
+    <leap-menu align="bottom-right">
+      <leap-menu-item>
+        <div class="user">
+          <leap-avatar user="user"></leap-avatar>
+          <div class="profile">
+            <h5>{{ first_name }} {{ last_name }}</h5>
+            <p>{{ email }}</p>
+          </div>
+        </div>
+      </leap-menu-item>
+
+      <leap-menu-item>
+        <leap-link>My Apps</leap-link>
+      </leap-menu-item>
+      
+      <leap-menu-item>
+        <leap-link ng-click="navigate('/signout');">Sign Out</leap-link>
+      </leap-menu-item>
+    </leap-menu>
+  </leap-link>
+</div>

@@ -1,0 +1,6 @@
+.leap-card {
+  overflow:hidden;
+  background:$leap-color-white;
+  @include box-shadow();
+  @include border-radius();
+}

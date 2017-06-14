@@ -1,0 +1,36 @@
+<div class="typography">
+  <div ng-repeat="family in module.families" class="families">
+    <div class="family">
+      <h3>Font Family ({{ family.name }})</h3>
+
+      <div class="sizes">
+        <div ng-repeat="size in ['xxx-large', 'xx-large', 'x-large', 'large', 'medium-bold', 'medium', 'small-light', 'small', 'x-small', 'xx-small']" class="size">
+          <leap-card>
+            <div id="sg-font-{{ size }}" class="content leap-font-{{ size }}" style="font-family:{{ family.font }}">A red flair silhouetted the jagged edge of a wing.</div>
+            <div class="code">
+              <code class="variable">@include font({{ size }});</code>
+              <code data-type="css">{{ css('#sg-font-'+ size, ['font-weight', 'font-size', 'line-height', 'text-transform']) }}</code>
+            </div>
+          </leap-card>
+        </div>
+      </div>
+
+      <h3>Paragraph Styling</h3>
+
+      <div class="paragraphs">
+        <div ng-repeat="size in ['large','medium-bold', 'medium', 'small-light', 'small', 'x-small', 'xx-small']" class="paragraph">
+          <leap-card>
+            <div class="content leap-font-{{ size }}" style="font-family:{{ family.font }}">
+              <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu ex ultrices, venenatis nunc vel, scelerisque nisi. Maecenas sit amet mi nec dui efficitur tempor at eu augue.</p>
+              <p>Nam placerat elementum nisi ultricies venenatis. Nam quis felis porttitor, gravida ex eget, ornare leo. Etiam scelerisque eros vel lectus vestibulum vehicula.</p>
+            </div>
+
+            <div class="code">
+              <code class="variable">@include font({{ size }});</code>
+            </div>
+          </leap-card>
+        </div>                
+      </div>
+    </div>
+  </div>
+</div>

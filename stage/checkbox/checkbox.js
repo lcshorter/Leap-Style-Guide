@@ -1,0 +1,20 @@
+angular
+  .module('leap')
+  .directive({
+    leapCheckbox:[
+      function(){
+        return {
+          restrict:'E',
+          replace:true,
+          scope:{
+            name:'@',
+            label:'@',
+            type:'@',
+            value:'=',
+            model:'='
+          },
+          templateUrl:'component/checkbox/checkbox.html'
+        };
+      }
+    ]
+  });

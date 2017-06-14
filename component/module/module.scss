@@ -1,0 +1,19 @@
+$leap-module-background: #FFF !default;
+
+.leap-module {
+  background:$leap-module-background;
+  @include box-shadow();
+  @include border-radius();
+  padding:grid(5);
+}
+
+
+
+
+@media #{$leap-breakpoint-rule-small} {
+  .leap-module {
+    @include border-radius(0);
+    @include box-shadow(0);
+    padding:grid(2)
+  }
+}

@@ -1,0 +1,174 @@
+@import '../component/leap';
+@import '../stage/palettes/palettes';
+@import '../component/avatar/avatar';
+@import '../component/button/button';
+@import '../component/card/card';
+@import '../component/checkbox/checkbox';
+@import '../component/fab/fab';
+@import '../component/form/form';
+@import '../component/link/link';
+@import '../component/list/list';
+@import '../component/menu/menu';
+@import '../component/module/module';
+@import '../component/profile/profile';
+@import '../component/progress/progress';
+@import '../component/textarea/textarea';
+@import '../component/tooltip/tooltip';
+@import '../component/user/user';
+@import '../component/users/users';
+
+@import '../stage/avatar/avatar';
+@import '../stage/button/button';
+@import '../stage/fab/fab';
+@import '../stage/grid/grid';
+@import '../stage/list/list';
+@import '../stage/overview/overview';
+@import '../stage/typography/typography';
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
+
+html,
+body {
+  @include font(small, $leap-color-gray100);
+}
+
+/*
+body {
+  @include bg-stripes(rgba(241,243,247,0.4));
+}
+*/
+
+.styleguide {
+  padding-top:grid(8);
+  padding-bottom:$leap-breakpoint-space;
+
+  .header {
+    position:fixed;
+    z-index:2;
+    top:0;
+    width:100%;
+    padding:grid(2) 0;
+    background:rgba(46,48,51,0.95);
+    @include box-shadow(2);
+
+    .breakpoint {
+      display:flex;
+    
+      h1 {
+        flex:1;
+        color:$leap-color-white;
+        text-transform:uppercase;
+      }
+
+      menu {
+        >.leap-link {
+          color:$leap-color-white;
+        }
+      }
+    }
+  }
+
+  code {
+    display:block;
+    background:none;
+    @include font(small);
+    font-family:'Roboto Slab', serif, monospace;
+    color:$leap-color-gray40;
+
+    &.variable {
+      @include font(medium);
+      color:$leap-color-gray60;
+    }
+  }
+
+  .module {
+    padding-top:grid(3);
+
+    &:last-child {
+      padding-bottom:grid();
+    }
+
+    h2 {
+      @include font(xx-large);
+      margin-bottom:grid();
+    }
+
+    h3 {
+      margin:grid(6) 0 grid();
+      @include font(x-small, $leap-color-gray60);
+    }
+  }
+
+  .leap-card {
+    .content {
+      border-bottom:1px solid $leap-color-gray04;
+    }
+
+    .code {
+      padding:grid(2) grid(3);
+    }
+  }
+}
+
+.mock-screen {
+  overflow:hidden;
+  @include border-radius();
+
+  header {
+    position:relative;
+    padding:grid(4);
+    background:$leap-color-gray10;
+    margin-bottom:1px;
+
+    h1 {
+      @include font(medium-bold, $leap-color-white);
+    }
+
+    .leap-fab-group {
+      position:absolute;
+      z-index:1;
+      top:grid(7.5);
+      right:grid(6);
+    }
+  }
+
+  .content {
+    display:flex;
+    height:grid(50);
+
+    section {
+      flex:1;
+      max-width:grid(50);
+      background:$leap-color-gray10;
+      margin-right:1px;
+    }
+
+    aside {
+      flex:1;
+      background:$leap-color-gray10;
+    }
+  }
+}
+
+
+
+
+
+@media #{$leap-breakpoint-rule-medium} {
+  .breakpoint {
+    margin:0 grid();
+  }
+}
+
+
+
+
+@media #{$leap-breakpoint-rule-small} {
+  .styleguide {
+    padding-bottom:0;
+
+    .leap-card {
+      margin-right:0 !important;
+    }
+  }
+}

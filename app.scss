@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+// -- Leap Overides -----------------------------------------------------------------------//
+
+// $leap-color-primary:#6244AE;
+
+
+// -- Angular ----------------------------------------------------------------------------//
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak,
+.ng-hide:not(.ng-hide-animate) {
+  display:none !important;
+}
+
+ng\:form {
+  display:block;
+}
+
+
+@import 'stage/stage';
+// -- @import '/clients/opentext/components/stage/stage';

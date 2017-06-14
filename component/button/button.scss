@@ -1,0 +1,94 @@
+// Primary
+$leap-button-background:$leap-color-primary !default;
+$leap-button-background--hover:$leap-color-primary !default;
+$leap-button-background--active:$leap-color-primary-faded !default;
+$leap-button-background--disabled:$leap-color-primary-faded !default;
+
+$leap-button-text:$leap-color-white !default;
+$leap-button-text--hover:$leap-color-white !default;
+$leap-button-text--active:$leap-color-white !default;
+$leap-button-text--disabled:$leap-color-white !default;
+
+
+// Secondary
+$leap-button-secondary-border:$leap-color-primary !default;
+$leap-button-secondary-border--hover:$leap-color-primary-dark !default;
+$leap-button-secondary-border--active:$leap-color-primary-light !default;
+$leap-button-secondary-border--disabled:$leap-color-primary-faded !default;
+
+$leap-button-secondary-text:$leap-color-primary !default;
+$leap-button-secondary-text--hover:$leap-color-primary-dark !default;
+$leap-button-secondary-text--active:$leap-color-primary-light !default;
+$leap-button-secondary-text--disabled:$leap-color-primary-faded !default;
+
+.leap-button {
+  display:inline-block;
+  min-width:grid(25);
+  padding:1.3em 3em;
+  background:$leap-button-background;
+  border:0;
+  border-radius:2em;
+  outline:none;
+  font-weight:$leap-font-weight-bold;
+  letter-spacing:0.1em;
+  transition:all 0.25s ease;
+  text-transform:uppercase;
+  color:$leap-button-text;
+  cursor:pointer;
+
+  &.expand {
+    display:block;
+    min-width:100%;
+  }
+
+  &:hover {
+    background:$leap-button-background--hover;
+    color:$leap-button-text--hover;
+  }
+
+  &:active {
+    background:$leap-button-background--active;
+    color:$leap-button-text--active;
+  }
+
+  &[disabled] {
+    background:$leap-button-background--disabled;
+    color:$leap-button-text--disabled;
+  }
+  
+  &.secondary {
+    background:transparent;
+    border:1px solid $leap-button-secondary-border;
+    color:$leap-button-secondary-text;
+
+    &:hover,
+    &:active {
+      background:transparent;
+    }
+
+    &:hover {
+      border-color:$leap-button-secondary-border--hover;
+      color:$leap-button-secondary-text--hover;
+    }
+
+    &:active {
+      border-color:$leap-button-secondary-border--active;
+      color:$leap-button-secondary-text--active;
+    }
+
+    &[disabled] {
+      background:transparent;
+      border-color:$leap-button-secondary-border--disabled;
+    }
+
+    &.fatal {
+      border-color:$leap-color-alert;
+      color:$leap-color-alert;
+    }
+
+    &.inverted {
+      border-color:$leap-color-white;
+      color:$leap-color-white;
+    }
+  }
+}

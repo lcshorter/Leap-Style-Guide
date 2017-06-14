@@ -1,0 +1,15 @@
+<leap-module class="list">
+  <leap-list>
+    <leap-list-header>
+      <leap-list-col>First Name</leap-list-col>
+      <leap-list-col>Last Name</leap-list-col>
+      <leap-list-col>Email</leap-list-col>
+    </leap-list-header>
+
+    <leap-list-row ng-repeat="user in module.users">
+      <leap-list-col>{{ user.first_name }}</leap-list-col>
+      <leap-list-col>{{ user.last_name }}</leap-list-col>
+      <leap-list-col>{{ user.email }}</leap-list-col>
+    </leap-list-row>
+  </leap-list>
+</leap-module>
